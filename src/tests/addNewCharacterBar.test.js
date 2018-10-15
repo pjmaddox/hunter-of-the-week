@@ -1,0 +1,37 @@
+import React from "react";
+import { shallow, configure } from "enzyme";
+import AddNewCharacterBar from "../components/AddNewCharacterBar.js";
+import Adapter from "enzyme-adpater-react-16";
+
+configure({ adapter: new Adapter() });
+
+describe("addNewCharacterBar", () => {
+    let shallowNode, mockAddFunction;
+
+    beforeEach(() => {
+        mockAddFunction = jest.fn();
+        shallowNode = shallow(<AddNewCharacterBar 
+            onAddClick = {mockAddFunction}
+        />);
+    });
+
+    describe("render elements", () => {
+        it("should render a button with text 'create new'", () => {
+            let result = shallowNode.find("button");
+            expect(result.length).toEqual(1);
+            expect(result.first().text()).toEqual("Create New");
+        });
+        it("should render an input textbox", () => {
+            let result = shallowNode.find("input");
+            expect(result.length).toEqual(1);
+        });
+    });
+    
+    describe("event tests", () => {
+        it("should call the onAddClick prop when button is clicked", () => {
+            let button = shallowNode.find("button").first();
+            button.simulate('click', {  });
+            expect(mockAddFunction.mock.calls.length).toEqual(1);
+        });
+    });
+});
