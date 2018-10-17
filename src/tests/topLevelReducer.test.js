@@ -9,7 +9,11 @@ describe("activeCharacterList", () => {
             "charles"
         ];
         fakeAddAction = {
-            type: ADD_NEW_CHARACTER
+            type: ADD_NEW_CHARACTER,
+            payload: {
+                guid: 555,
+                classId: 4
+            }
         };
     });
 

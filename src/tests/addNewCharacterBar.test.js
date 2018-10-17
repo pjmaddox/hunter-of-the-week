@@ -25,6 +25,9 @@ describe("addNewCharacterBar", () => {
             let result = shallowNode.find("input");
             expect(result.length).toEqual(1);
         });
+        it("should render a dropdown with optiosn for each archetype", () => {
+            
+        });
     });
     
     describe("event tests", () => {
