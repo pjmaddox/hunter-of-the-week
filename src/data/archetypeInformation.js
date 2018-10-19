@@ -1,4 +1,4 @@
-export const validCharacterClassesAsDictionary = [
+export const validArchetypesAsDictionary = [
     "The Chosen"=0,
     "The Divine"=1,
     "The Expert"=2,
@@ -10,7 +10,7 @@ export const validCharacterClassesAsDictionary = [
     "The Wronged"=8,
 ];
 
-export const validCharacterClassesAsObjects = [
+export const validArchetypesAsObjects = [
     {
         id: 0,
         name: "The Chosen",
@@ -58,7 +58,7 @@ export const improvementEffectTypes = {
 
 };
 
-export const classDetails = [
+export const archetypeDetails = [
     {
         id: 0,
         name: "The Chosen",
