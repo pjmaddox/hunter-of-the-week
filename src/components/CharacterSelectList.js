@@ -5,7 +5,13 @@ import AddNewCharacterBarContainer from './components/containers/AddNewCharacter
 import CharacterSelect from './CharacterSelect.js';
 
 export default class CharacterSelectList extends Component {
-    
+    render() {
+        return (
+            <div className="characterSelectListContainer">
+                characterSelectListContainer
+            </div>
+        );
+    }
 };
 
 CharacterSelectList.propTypes = {

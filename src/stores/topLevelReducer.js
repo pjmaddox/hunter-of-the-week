@@ -14,7 +14,7 @@ const activeCharacterList = (previousState = [], action) => {
             let newCharacter = getNewCharacter(action.payload.guid, action.payload.archetypeId);
             return _.concat(previousState, newCharacter);
         case REMOVE_ITEM: 
-
+            previousState.find( _.without());
             break;
         default:
             return previousState;
