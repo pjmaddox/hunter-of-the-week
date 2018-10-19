@@ -5,8 +5,7 @@ import AddNewCharacterBar from "../AddNewCharacterBar.js";
 
 const mapDispatchToProps = dispatch => {
     return {
-        onButtonClick: dispatch => { dispatch(addNewCharacter()); },
-        onTextChange: dispatch => { dispatch(); }
+        onButtonClick: dispatch => { dispatch(addNewCharacter()); }
     };
 };
 

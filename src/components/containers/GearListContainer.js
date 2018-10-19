@@ -1,6 +1,8 @@
 //GearListContainer
 import { connect } from "react-redux";
 import _ from 'lodash';
+import { removeItem } from "../../stores/actions/actions.js";
+import GearList from "../GearList.js";
 
 const mapStateToProps = (state, ownProps) => {
     const characterObject = _.find(state.activeCharacterList, { id: ownProps.characterId });
@@ -19,5 +21,5 @@ const mapDispatchtoProps = (dispatch, ownProps) => {
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchtoProps
 )(GearList);

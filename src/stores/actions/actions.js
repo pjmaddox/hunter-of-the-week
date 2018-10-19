@@ -9,3 +9,24 @@ export const addNewCharacter = (classId) => {
         }
     };
 };
+
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const removeItem = (targetCharacterId, targetItemIndex) => {
+    return {
+        type: REMOVE_ITEM,
+        payload: {
+            characterId: targetCharacterId,
+            itemIndex: targetItemIndex
+        }
+    }
+};
+
+export const CHANGE_SELECTED_CHARACTER = "CHANGE_SELECTED_CHARACTER";
+export const changeSelectedCharacter = (targetCharacterId) => {
+    return {
+        type: CHANGE_SELECTED_CHARACTER,
+        payload: {
+            characterId: targetCharacterId
+        }
+    };
+};

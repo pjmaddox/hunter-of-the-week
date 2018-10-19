@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { ADD_NEW_CHARACTER } from "../stores/actions/actions.js";
 
-const activeCharacterList = (previousState, action) => {
+const activeCharacterList = (previousState = [], action) => {
      console.log(previousState);
      console.log(action);
 

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AddNewCharacterBarContainer from './components/containers/AddNewCharacterBarContainer.js';
-import CharacterSelectContainer from './components/containers/CharacterSelectContainer.js';
+import CharacterSelectContainer from './components/containers/CharacterSelectListContainer.js';
 
 
 class App extends Component {
@@ -10,7 +9,6 @@ class App extends Component {
     return (
       <div className="App">
         <CharacterSelectContainer/>
-        <AddNewCharacterBarContainer />
       </div>
     );
   }

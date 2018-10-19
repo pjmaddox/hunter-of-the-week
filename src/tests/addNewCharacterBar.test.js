@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import AddNewCharacterBar from "../components/AddNewCharacterBar.js";
-import Adapter from "enzyme-adpater-react-16";
-import { archetypeDetails  } from "../data/archetypeInformation.js";
+import Adapter from "enzyme-adapter-react-16";
+//import { archetypeDetails  } from "../data/archetypeInformation.js";
 
 configure({ adapter: new Adapter() });
 

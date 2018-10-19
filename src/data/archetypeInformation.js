@@ -1,13 +1,13 @@
 export const validArchetypesAsDictionary = [
-    "The Chosen"=0,
-    "The Divine"=1,
-    "The Expert"=2,
-    "The Flake"=3,
-    "The Initiate"=4,
-    "The Monstrous"=5,
-    "The Mundane"=6,
-    "The Spooky"=7,
-    "The Wronged"=8,
+    TheChosen=0,
+    TheDivine=1,
+    TheExpert=2,
+    TheFlake=3,
+    TheInitiate=4,
+    TheMonstrous=5,
+    TheMundane=6,
+    TheSpooky=7,
+    TheWronged=8,
 ];
 
 export const validArchetypesAsObjects = [
