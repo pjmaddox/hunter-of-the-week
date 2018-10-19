@@ -11,7 +11,7 @@ describe("addNewCharacter", () => {
     });
     it("should create an object with a type attribute with value 'ADD_NEW_CHARACTER_TEXT_CHANGE'", () => {
         let result = addNewCharacter(0);
-        expect(result.payload.type).toEqual(ADD_NEW_CHARACTER);
+        expect(result.type).toEqual(ADD_NEW_CHARACTER);
     });
 
     it("should create an object with a payload attribute", () => {
@@ -38,7 +38,7 @@ describe("removeItem", () => {
     });
     it("should create an object with a type attribute with value 'REMOVE_ITEM'", () => {
         let result = removeItem(expectedCharacterId, expectedItemIndex);
-        expect(result.payload.type).toEqual(REMOVE_ITEM);
+        expect(result.type).toEqual(REMOVE_ITEM);
     });
 
     it("should create an object with a payload attribute", () => {
@@ -62,9 +62,9 @@ describe("changeSelectedCharacter", () => {
     beforeEach(() => {
         expectedCharacterId = 1237;
     });
-    it("should create an object with a type attribute with value 'ADD_NEW_CHARACTER_TEXT_CHANGE'", () => {
+    it("should create an object with a type attribute with value 'CHANGE_SELECTED_CHARACTER'", () => {
         let result = changeSelectedCharacter(expectedCharacterId);
-        expect(result.payload.type).toEqual(CHANGE_SELECTED_CHARACTER);
+        expect(result.type).toEqual(CHANGE_SELECTED_CHARACTER);
     });
 
     it("should create an object with a payload attribute", () => {

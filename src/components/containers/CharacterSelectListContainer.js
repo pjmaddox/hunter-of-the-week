@@ -1,7 +1,8 @@
-//CharacterSelectContainer
+//CharacterSelectListContainer
 import CharacterSelect from '../CharacterSelect.js';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { changeSelectedCharacter } from "../../stores/actions/actions.js";
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchtoProps = dispatch => {
     return {
-        onCharacterClick: (newSelectedCharacter) => { dispatch(changeSelectedCharacter); }
+        onCharacterClick: (newSelectedCharacter) => { dispatch(changeSelectedCharacter(newSelectedCharacter)); }
     }
 };
 
