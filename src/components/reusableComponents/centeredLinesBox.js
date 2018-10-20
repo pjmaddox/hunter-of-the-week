@@ -6,7 +6,7 @@ const CenteredLinesBox = (props) => {
     let elementsToRender = _.map(props.lineElements, (x) => {
         
         return (
-            <div className="row centeredLineRow">
+            <div className="row centeredLineRow" key={"centeredLineBox" + x}>
                 <div className="col-sm-12">
                     {x}
                 </div>

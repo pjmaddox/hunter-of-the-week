@@ -19,10 +19,8 @@ describe("render", () => {
         expect(results.length).toEqual(fakeElementsToRender.length);
     });
     it("should render the given element or text in the expected position", () => {
-        let results = shallowNode.find(".centeredLineRow");
-        _.forEach(results, (x) => {
-            console.log(x);
-            console.log(x.innerHtml);
+        shallowNode.find(".centeredLineRow").forEach((node, i) => {
+            expect(node.text()).toContain(fakeElementsToRender[i]);
         });
         //TODO figure out expect here - expect each element to be rendered
     });
