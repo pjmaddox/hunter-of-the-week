@@ -13,7 +13,6 @@ const CenteredLinesBox = (props) => {
             </div>
         );
     });
-    console.log(elementsToRender);
     return (
         <div className="centeredLineBox">
             {elementsToRender}
