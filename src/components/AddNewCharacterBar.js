@@ -20,12 +20,12 @@ export default class AddNewCharacterBar extends Component {
     render() {
         let archetypeOptions = _.map(this.props.archetypeList, (ax) => {
             return (
-                <option value={ax.value}>{ax.text}</option>
+                <option value={ax.value} key={"characterCreationArchetype-" + ax.value}>{ax.text}</option>
             );
         });
         return (
             <div className="addNewCharacterBarContainer">
-                <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange}>
+                <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange} className="archetypeSelect">
                     <option value={-1}>Select Archetype</option>
                     {archetypeOptions}
                 </select>
