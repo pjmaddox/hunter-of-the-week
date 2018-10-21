@@ -46,7 +46,6 @@ describe("activeCharacterList", () => {
 
     it("Should have created a character that has the expected archetypeId as it's archetype id", () => {
         let result = topLevelReducer(fakePreviousState, fakeAddAction).activeCharacterList;
-        console.log(result);
         expect(result[1].archetypeId).toEqual(fakeAddAction.payload.archetypeId);
     });
 });

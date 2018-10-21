@@ -34,3 +34,7 @@
 .centeredLineBox {
   margin:auto;
 }
+
+.characterSelectContainer{
+  cursor: pointer;
+}

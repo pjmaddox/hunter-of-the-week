@@ -6,15 +6,17 @@ import CharacterSelect from '../components/CharacterSelect.js'
 configure({adapter: new Adapter()});
 
 describe("characterSelectTest", () => {
-    let mockOnCharacterClick, shallowNode, fakeCharacterName, fakeCharacterArchetypeText;
+    let mockOnCharacterClick, shallowNode, fakeCharacterName, fakeCharacterArchetypeText, fakeCharacterId;
     beforeEach(() => {
         mockOnCharacterClick = jest.fn();
         fakeCharacterArchetypeText = "The Chosen";
         fakeCharacterName = "CNiuhef oqiehf";
+        fakeCharacterId = 20;
         shallowNode = shallow(<CharacterSelect
             onCharacterClick={mockOnCharacterClick}
             name={fakeCharacterName}
             archetype={fakeCharacterArchetypeText}
+            characterId={fakeCharacterId}
         />);
     });
     it("should populate the character's name in a span", () => {
@@ -30,5 +32,11 @@ describe("characterSelectTest", () => {
         let target =shallowNode.find(".characterSelectContainer");
         target.simulate("click", fakeEvent);
         expect(mockOnCharacterClick.mock.calls.length).toEqual(1);
+    });
+    it("should call the onCharacterClick prop with the characterId associated with that character on Click", () => {
+        let fakeEvent = {  };
+        let target =shallowNode.find(".characterSelectContainer");
+        target.simulate("click", fakeEvent);
+        expect(mockOnCharacterClick.mock.calls[0][0]).toEqual(fakeCharacterId);
     });
 });

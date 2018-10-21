@@ -4,10 +4,10 @@ import { changeSelectedCharacter, CHANGE_SELECTED_CHARACTER } from "../stores/ac
 
 //TODO DEFINE THESE TESTS AND RE-LOOK
 describe("addNewCharacter", () => {
-    let expectedGuid, expectedClassId;
+    let expectedGuid, expectedArchetypeId;
     beforeEach(() => {
         expectedGuid = 11111;
-        expectedClassId = 7;
+        expectedArchetypeId = 7;
     });
     it("should create an object with a type attribute with value 'ADD_NEW_CHARACTER_TEXT_CHANGE'", () => {
         let result = addNewCharacter(0);
@@ -20,8 +20,8 @@ describe("addNewCharacter", () => {
     });
 
     it("should have an attribute with the class id on the payload", () => {
-        let result = addNewCharacter(expectedClassId);
-        expect(result.payload.classId).toEqual(expectedClassId);
+        let result = addNewCharacter(expectedArchetypeId);
+        expect(result.payload.archetypeId).toEqual(expectedArchetypeId);
     });
 
     it("should have an attribute on the payload called 'guid'", () => {

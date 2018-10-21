@@ -30,6 +30,13 @@ export default topLevelReducer;
 const getNewCharacter = (characterId, archetypeId) => {
     return {
         id: characterId,
-        archetypeId: archetypeId
+        archetypeId: archetypeId,
+        name: "",
+        gearList: [
+
+        ],
+        moves: [
+            
+        ]
     };
 };
