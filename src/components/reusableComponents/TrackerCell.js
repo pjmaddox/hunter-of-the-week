@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 const TrackerCell = (props) => {
     return (
-        <div className="trackerCell" style={{ backgroundColor: props.isFilled? props.fillColorText : "white", cursor: "pointer", border: "1px grey" }} onClick={onCellClick}>
+        <div className="trackerCell" style={{ backgroundColor: props.isFilled? props.fillColorText : "white", cursor: "pointer", border: "1px grey" }} onClick={props.onCellClick}>
             {/* TODO: how the hell to style this?!?!?!?!? */}
         </div>
     );

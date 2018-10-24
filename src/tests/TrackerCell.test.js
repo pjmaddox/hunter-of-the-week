@@ -1,7 +1,7 @@
 //TrackerCell.test.js
 import { configure, shallow } from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
-import TrackerCell from '../Components/TrackerCell.js';
+import TrackerCell from '../components/reusableComponents/TrackerCell.js';
 import React from "react";
 
 configure({adapter: new Adapter()});
