@@ -54,13 +54,17 @@ describe("addNewCharacterBar", () => {
             button.simulate('click', { target: { value: "butts" } });
             expect(mockAddFunction.mock.calls.length).toEqual(1);
         });
+
         it("should start with a state of selectedArchetypeValue=-1", () => {
             expect(shallowNode.state("selectedArchetypeValue")).toEqual(-1);
         });
+
         it("should change the state when an option is selected", () => {
             let select = shallowNode.find('.archetypeSelect');
-            cosnt fakeEvent = { target: { value: 3 } };
-            select.simulate();
+            let expectedArchetypeValue = 3;
+            const fakeEvent = { target: { value: expectedArchetypeValue } };
+            select.simulate("change", fakeEvent);
+            expect(shallowNode.state().selectedArchetypeValue).toEqual(expectedArchetypeValue);
         });
     });
 });
