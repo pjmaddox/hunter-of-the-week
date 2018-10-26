@@ -1,7 +1,7 @@
 //ExperienceTracker Component
 import React from 'react';
 import PropTypes from 'prop-types';
-import CellTrackerArray from "./reusableComponents";
+import CellTrackerArray from "./reusableComponents/CellTrackerArray.js";
 
 const ExperienceTracker = (props) => {
     return (

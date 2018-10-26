@@ -1,8 +1,8 @@
 //CellTrackerArray Component
 import React from 'react';
 import PropTypes from 'prop-types';
-import TrackerCell from "./reusableComponents/TrackerCell.js";
-import DoSomethingButton from './reusableComponents/DoSomethingButton.js';
+import TrackerCell from "./TrackerCell.js";
+import DoSomethingButton from './DoSomethingButton.js';
 
 const CellTrackerArray = (props) => {
     
@@ -48,3 +48,5 @@ CellTrackerArray.propTypes = {
     hasClearAllButton: PropTypes.bool.isRequired,
     cellColorText: PropTypes.string
 };
+
+export default CellTrackerArray;

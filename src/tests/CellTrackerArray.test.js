@@ -32,7 +32,7 @@ describe("CellTrackerArray Render", () => {
     it("should render a DoSomethingButton with the function prop for clearingAll when the hasClearAllButton prop is true", () => {
         let result = shallowNode.find("DoSomethingButton");
         expect(result.length).toEqual(1);
-        expect(result.first().props().onClickThingToDo).toEqual();
+        expect(result.first().props().onClickThingToDo).toEqual(mockHandleValueChangeFunction);
     });
     it("should not render a DoSomethingButton when the hasClearAllButton prop is false", () => {
         let shallowNode = shallow(<CellTrackerArray 
