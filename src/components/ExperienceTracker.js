@@ -8,7 +8,7 @@ const ExperienceTracker = (props) => {
         <div className="experienceTrackerContainer">
             <CellTrackerArray 
                 currentvalue={props.currentXp}
-                maxvalue={5}
+                maxValue={5}
                 handleValueChange={props.handleXpChange}
                 trackerLabelText={"XP"}
                 hasClearAllButton={true}

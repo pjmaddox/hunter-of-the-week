@@ -27,7 +27,7 @@ describe("CellTrackerArray Render", () => {
     it("should should render a span containing the expected label text", () => {
         let result = shallowNode.find("span");
         expect(result.length).toEqual(1);
-        expect(result.props().children).toEqual("Clear All");
+        expect(result.props().children).toEqual(expectedtTackerLabel);
     });
     it("should render a DoSomethingButton with the function prop for clearingAll when the hasClearAllButton prop is true", () => {
         let result = shallowNode.find("DoSomethingButton");
