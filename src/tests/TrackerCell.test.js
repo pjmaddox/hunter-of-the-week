@@ -29,11 +29,17 @@ describe("TrackerCell render", () => {
         expect(mockOnCellClickFunction.mock.calls.length).toEqual(1);
     });
     it("should render with a style: backgroundColor as expectedFillColor when isFilled is true", () => {
+        shallowNode = shallow(<TrackerCell 
+            onCellClick={mockOnCellClickFunction}
+            isFilled={true}
+            fillColorText={expectedFillColorText}
+        />);
         let result = shallowNode.find(".trackerCell");
-        
+        expect(result.first().props().style.backgroundColor).toEqual(expectedFillColorText);
     });
-    it("should render with a style: backgroundColor as wihte when isFilled is false", () => {
+    it("should render with a style: backgroundColor as white when isFilled is false", () => {
+        let expectedFillColorText = "white";
         let result = shallowNode.find(".trackerCell");
-
+        expect(result.first().props().style.backgroundColor).toEqual(expectedFillColorText);
     });
 });

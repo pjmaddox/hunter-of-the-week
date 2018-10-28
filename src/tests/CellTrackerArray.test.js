@@ -52,7 +52,7 @@ describe("CellTrackerArray Render", () => {
     it("should 'fill in' a number of TrackerCells equal to the currentValue prop", () => {
         //For now this is represented by just having the checked attribute
         let result = shallowNode.find("TrackerCell");
-        result.each((node, i) => {
+        result.forEach((node, i) => {
             let shouldBeChecked = (i < expectedCurrentValue)? true : false;
 
             //TODO: Confirm this works and look at values for the future

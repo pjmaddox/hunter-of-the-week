@@ -7,7 +7,7 @@ const ExperienceTracker = (props) => {
     return (
         <div className="experienceTrackerContainer">
             <CellTrackerArray 
-                currentvalue={props.currentXp}
+                currentValue={props.currentXp}
                 maxValue={5}
                 handleValueChange={props.handleXpChange}
                 trackerLabelText={"XP"}

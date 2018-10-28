@@ -7,8 +7,9 @@ import ExperienceTracker from '../components/ExperienceTracker.js';
 configure({adapter: new Adapter()});
 
 describe("Experience Tracker Render", () => {
-    let shallowNode, mockHandleXpChangeFunction, expectedCurrentXp;
+    let shallowNode, mockHandleXpChangeFunction, expectedCurrentXp, expectedMaxXp;
     beforeEach(() => {
+        expectedMaxXp = 5;
         expectedCurrentXp = 3;
         mockHandleXpChangeFunction = jest.fn();
         shallowNode = shallow(<ExperienceTracker 
@@ -27,12 +28,12 @@ describe("Experience Tracker Render", () => {
     it("should render a CellTrackerArray with the maxValue of 5", () => {
         let result = shallowNode.find("CellTrackerArray");
         console.log(result.first().props());
-        expect(result.first().props().maxValue).toEqual(5);
+        expect(result.first().props().maxValue).toEqual(expectedMaxXp);
     });
     it("should render a cellTrackerArray wit hthe handleValueChange function mapped to the handleXpChange function", () => {
         let result = shallowNode.find("CellTrackerArray");
-        console.log(result.first().props().handleValueChange);
-        console.log(mockHandleXpChangeFunction.mock);
+        // console.log(result.first().props().handleValueChange);
+        // console.log(mockHandleXpChangeFunction.mock);
         expect(result.first().props().handleValueChange).toEqual(mockHandleXpChangeFunction);
     });
     it("should render a cellTrackerArray with the trackerLabelText 'XP'", () => {

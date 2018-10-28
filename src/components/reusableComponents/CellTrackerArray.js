@@ -9,7 +9,7 @@ const CellTrackerArray = (props) => {
     let cellColor = props.cellColorText? props.cellColorText : "black";
     let trackerCells = [];
 
-    for(var i = 0; i < props.maxValue; ++i) {
+    for(let i = 0; i < props.maxValue; ++i) {
         let singleCell = <TrackerCell 
             isFilled={(i<props.currentvalue)? true : false}
             fillColorText={cellColor}
