@@ -21,11 +21,11 @@ describe("characterSelectTest", () => {
     });
     it("should populate the character's name in a span", () => {
         let result = shallowNode.find(".characterSelect-name");
-
+        expect(result.first().children).toEqual(fakeCharacterName);
     });
     it("should populate the character's archetype in a span", () => {
         let result = shallowNode.find(".characterSelect-archetype");
-        
+        expect(result.first().children).toEqual(fakeCharacterArchetypeText);
     });
     it("should call the onCharacterClick prop when click", () => {
         let fakeEvent = {  };
