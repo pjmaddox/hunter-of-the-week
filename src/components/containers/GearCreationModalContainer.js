@@ -1,7 +1,7 @@
 //GearCreationModalContainer
 import GearModal from '../GearCreationModal.js';
 import { connect } from 'react-redux';
-
+//TODO: Flesh Out
 const mapStateToProps = state => {
     return {
 

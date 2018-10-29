@@ -6,6 +6,7 @@ import CharacterSelect from './CharacterSelect.js';
 
 export default class CharacterSelectList extends Component {
     render() {
+        //TODO: Next Priority
         return (
             <div className="characterSelectListContainer">
                 characterSelectListContainer

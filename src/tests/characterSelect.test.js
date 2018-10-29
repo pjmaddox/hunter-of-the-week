@@ -2,6 +2,7 @@ import React from 'react';
 import { configure, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import CharacterSelect from '../components/CharacterSelect.js'
+import AddNewCharacterBar from '../components/AddNewCharacterBar.js'
 
 configure({adapter: new Adapter()});
 
@@ -38,5 +39,9 @@ describe("characterSelectTest", () => {
         let target =shallowNode.find(".characterSelectContainer");
         target.simulate("click", fakeEvent);
         expect(mockOnCharacterClick.mock.calls[0][0]).toEqual(fakeCharacterId);
+    });
+    it("should render an addNewCharacterBar", () => {
+        let result = shallowNode.find("AddNewCharacterBar");
+        expect(result.length).toEqual(1);
     });
 });

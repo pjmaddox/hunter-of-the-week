@@ -32,6 +32,9 @@ const getNewCharacter = (characterId, archetypeId) => {
         id: characterId,
         archetypeId: archetypeId,
         name: "",
+        currentHarm: 0,
+        currentLuck: 7,
+        currentXp: 0,
         gearList: [
 
         ],

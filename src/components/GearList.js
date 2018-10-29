@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 export default class GearList extends Component {
     render = () => {
+        //TODO: Flesh out
         return (
             <div className="GearListContainer">
             </div>

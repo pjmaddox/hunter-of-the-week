@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class GearCreationModal extends Component {
     render() {
+        //TODO: Flesh out
         return (
             //Look up a good modal / lightbox library
             <div className="gearCreationModal col-sm-12 col-md-10 col-lg-6">
