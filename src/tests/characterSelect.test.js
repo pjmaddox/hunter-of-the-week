@@ -40,8 +40,4 @@ describe("characterSelectTest", () => {
         target.simulate("click", fakeEvent);
         expect(mockOnCharacterClick.mock.calls[0][0]).toEqual(fakeCharacterId);
     });
-    it("should render an addNewCharacterBar", () => {
-        let result = shallowNode.find("AddNewCharacterBar");
-        expect(result.length).toEqual(1);
-    });
 });

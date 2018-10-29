@@ -4,15 +4,23 @@ import PropTypes from "prop-types";
 import AddNewCharacterBarContainer from './components/containers/AddNewCharacterBarContainer.js';
 import CharacterSelect from './CharacterSelect.js';
 
-export default class CharacterSelectList extends Component {
-    render() {
-        //TODO: Next Priority
-        return (
-            <div className="characterSelectListContainer">
-                characterSelectListContainer
+const CharacterSelectList = (props) => { 
+    //TODO: Next Priority
+    return (
+        <div className="characterSelectListContainer col-sm-12">
+            <div className="row">
+                <div className="col-sm-12">
+                    <AddNewCharacterBarContainer />
+                </div>
             </div>
-        );
-    }
+            <br/>
+            <div className="row">
+                <div className="col-sm-12">
+                    {props.characterSelectElements}
+                </div>
+            </div>
+        </div>
+    );
 };
 
 CharacterSelectList.propTypes = {
