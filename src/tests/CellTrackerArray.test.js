@@ -36,7 +36,7 @@ describe("CellTrackerArray Render", () => {
     //     expect(result.length).toEqual(1); //This is fine
     //This is not:
     //     expect(result.first().props().onClickThingToDo).toEqual(mockHandleValueChangeFunction.mock);
-    });
+    // });
     it("should not render a DoSomethingButton when the hasClearAllButton prop is false", () => {
         let shallowNode = shallow(<CellTrackerArray 
             currentValue={expectedCurrentValue}
