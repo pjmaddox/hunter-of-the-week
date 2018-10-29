@@ -11,7 +11,8 @@ const CellTrackerArray = (props) => {
 
     for(let i = 0; i < props.maxValue; ++i) {
         let singleCell = <TrackerCell 
-            isFilled={(i<props.currentvalue)? true : false}
+            key={"trackerCell" + i}
+            isFilled={(i<props.currentValue)? true : false}
             fillColorText={cellColor}
             //TODO: this is a great point and i don't know how to get around it at this moment
             onCellClick={() => { props.handleValueChange(i+1); }}
@@ -41,8 +42,8 @@ const CellTrackerArray = (props) => {
 };
 
 CellTrackerArray.propTypes = {
-    currentvalue: PropTypes.number.isRequired,
-    maxvalue: PropTypes.number.isRequired,
+    currentValue: PropTypes.number.isRequired,
+    maxValue: PropTypes.number.isRequired,
     handleValueChange: PropTypes.func.isRequired,
     trackerLabelText: PropTypes.string.isRequired,
     hasClearAllButton: PropTypes.bool.isRequired,

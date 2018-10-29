@@ -27,7 +27,6 @@ describe("Experience Tracker Render", () => {
     });
     it("should render a CellTrackerArray with the maxValue of 5", () => {
         let result = shallowNode.find("CellTrackerArray");
-        console.log(result.first().props());
         expect(result.first().props().maxValue).toEqual(expectedMaxXp);
     });
     it("should render a cellTrackerArray wit hthe handleValueChange function mapped to the handleXpChange function", () => {
