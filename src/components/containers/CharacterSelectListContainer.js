@@ -1,5 +1,5 @@
 //CharacterSelectListContainer
-import CharacterSelect from '../CharacterSelect.js';
+import CharacterSelectList from '../CharacterSelectList.js';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { changeSelectedCharacter } from "../../stores/actions/actions.js";
@@ -19,4 +19,4 @@ const mapDispatchtoProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchtoProps
-)(CharacterSelect)
+)(CharacterSelectList)
