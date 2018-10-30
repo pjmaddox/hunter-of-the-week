@@ -1,11 +1,11 @@
-//CharacterSelect
+//CharacterSelect Component
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const CharacterSelect = (props) => {
-    
+    let selectedCharacterClass = props.isCurrentlyselectedCharacter? "" : "";
     return (
-        <div className="characterSelectContainer row" onClick={() => { this.props.onCharacterClick(this.props.characterId); }}>
+        <div className={"characterSelectContainer row" + selectedCharacterClass} onClick={props.onCharacterClick}>
             <div className="col-sm-12">
                 <div className="row">
                     <div className="col-sm-12">
@@ -23,7 +23,10 @@ const CharacterSelect = (props) => {
 };
 
 CharacterSelect.propTypes = {
-
+    isCurrentlyselectedCharacter: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    archetype: PropTypes.string.isRequired,
+    onCharacterClick: PropTypes.func.isRequired,
 }
 
 export default CharacterSelect;
