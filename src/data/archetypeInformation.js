@@ -12,40 +12,40 @@ export const validArchetypesAsDictionary = [
 
 export const validArchetypesAsObjects = [
     {
-        id: 0,
-        name: "The Chosen",
+        value: 0,
+        text: "The Chosen",
     },
     {
-        id: 1,
-        name: "The Divine",
+        value: 1,
+        text: "The Divine",
     },
     {
-        id: 2,
-        name: "The Expert",
+        value: 2,
+        text: "The Expert",
     },
     {
-        id: 3,
-        name: "The Flake",
+        value: 3,
+        text: "The Flake",
     },
     {
-        id:4, 
-        name: "The Initiate"
+        value:4, 
+        text: "The Initiate"
     },
     {
-        id:5,
-        name: "The Monstrous"
+        value:5,
+        text: "The Monstrous"
     },
     {
-        id:6,
-        name: "The Mundane"
+        value:6,
+        text: "The Mundane"
     },
     {
-        id:7,
-        name: "The Spooky"
+        value:7,
+        text: "The Spooky"
     },
     {
-        id:8,
-        name:"The Wronged"
+        value:8,
+        text:"The Wronged"
     }
 ];
 

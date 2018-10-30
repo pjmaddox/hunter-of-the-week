@@ -1,4 +1,4 @@
-//CharacterSelectList
+//CharacterSelectList Component
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import AddNewCharacterBarContainer from './components/containers/AddNewCharacterBarContainer.js';
@@ -24,5 +24,10 @@ const CharacterSelectList = (props) => {
 };
 
 CharacterSelectList.propTypes = {
-    characterSelectElements: PropTypes.arrayOf(PropTypes.instanceOf(CharacterSelect))
+    characterSelectElements: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        archetype: PropTypes.string.isRequired,
+        characterId: PropTypes.number.isRequired
+    })),
+    onCharacterClick: PropTypes.func.isRequired
 };

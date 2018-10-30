@@ -1,6 +1,10 @@
+//Actions Test
 import {  ADD_NEW_CHARACTER, addNewCharacter } from "../stores/actions/actions.js";
 import { removeItem, REMOVE_ITEM } from "../stores/actions/actions.js";
 import { changeSelectedCharacter, CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
+import { changeHarmForCharacter, CHANGE_HARM_FOR_CHARACTER } from '../stores/actions/actions.js';
+import { changeXpForCharacter, CHANGE_XP_FOR_CHARACTER } from '../stores/actions/actions.js';
+import { changeLuckForCharacter, CHANGE_LUCK_FOR_CHARACTER } from '../stores/actions/actions.js';
 
 //TODO DEFINE THESE TESTS AND RE-LOOK
 describe("addNewCharacter", () => {
@@ -75,5 +79,77 @@ describe("changeSelectedCharacter", () => {
     it("should have an attribute with the class id on the payload", () => {
         let result = changeSelectedCharacter(expectedCharacterId);
         expect(result.payload.characterId).toEqual(expectedCharacterId);
+    });
+});
+
+describe("changeHarmForCharacter", () => {
+    let expectedNewHarmValue, expectedCharacterId;
+    beforeEach(() => {
+        expectedNewHarmValue = 6;
+        expectedCharacterId = 16;
+    });
+    it("should create an object with a type attribute which has the value 'CHANGE_HARM_FOR_CHARACTER'", () => {
+        let result = changeHarmForCharacter(expectedCharacterId, expectedNewHarmValue);
+        expect(result.type).toEqual(CHANGE_HARM_FOR_CHARACTER);
+    });
+    it("should create an object with a payload attribute",() => {
+        let result = changeHarmForCharacter(expectedCharacterId, expectedNewHarmValue);
+        expect(result.payload).not.toBeNull();
+    });
+    it("should have a characterId attribute on the payload equal to the expectedCharacterId", () => {
+        let result = changeHarmForCharacter(expectedCharacterId, expectedNewHarmValue);
+        expect(result.payload.characterId).toEqual(expectedCharacterId);
+    });
+    it("should have a newValue attribute on the payload equal to expectedNewHarmValue", () => {
+        let result = changeHarmForCharacter(expectedCharacterId, expectedNewHarmValue);
+        expect(result.payload.newValue).toEqual(expectedNewHarmValue);
+    });
+});
+
+describe("changeXpForCharacter", () => {
+    let expectedNewXpValue, expectedCharacterId;
+    beforeEach(() => {
+        expectedNewXpValue = 6;
+        expectedCharacterId = 16;
+    });
+    it("should create an object with a type attribute which has the value 'CHANGE_XP_FOR_CHARACTER'", () => {
+        let result = changeXpForCharacter(expectedCharacterId, expectedNewXpValue);
+        expect(result.type).toEqual(CHANGE_XP_FOR_CHARACTER);
+    });
+    it("should create an object with a payload attribute",() => {
+        let result = changeXpForCharacter(expectedCharacterId, expectedNewXpValue);
+        expect(result.payload).not.toBeNull();
+    });
+    it("should have a characterId attribute on the payload equal to the expectedCharacterId", () => {
+        let result = changeXpForCharacter(expectedCharacterId, expectedNewXpValue);
+        expect(result.payload.characterId).toEqual(expectedCharacterId);
+    });
+    it("should have a newValue attribute on the payload equal to expectedNewXpValue", () => {
+        let result = changeXpForCharacter(expectedCharacterId, expectedNewXpValue);
+        expect(result.payload.newValue).toEqual(expectedNewXpValue);
+    });
+});
+
+describe("changeLuckForCharacter", () => {
+    let expectedNewLuckValue, expectedCharacterId;
+    beforeEach(() => {
+        expectedNewLuckValue = 6;
+        expectedCharacterId = 16;
+    });
+    it("should create an object with a type attribute which has the value 'CHANGE_LUCK_FOR_CHARACTER'", () => {
+        let result = changeLuckForCharacter(expectedCharacterId, expectedNewLuckValue);
+        expect(result.type).toEqual(CHANGE_LUCK_FOR_CHARACTER);
+    });
+    it("should create an object with a payload attribute",() => {
+        let result = changeLuckForCharacter(expectedCharacterId, expectedNewLuckValue);
+        expect(result.payload).not.toBeNull();
+    });
+    it("should have a characterId attribute on the payload equal to the expectedCharacterId", () => {
+        let result = changeLuckForCharacter(expectedCharacterId, expectedNewLuckValue);
+        expect(result.payload.characterId).toEqual(expectedCharacterId);
+    });
+    it("should have a newValue attribute on the payload equal to expectedNewLuckValue", () => {
+        let result = changeLuckForCharacter(expectedCharacterId, expectedNewLuckValue);
+        expect(result.payload.newValue).toEqual(expectedNewLuckValue);
     });
 });
