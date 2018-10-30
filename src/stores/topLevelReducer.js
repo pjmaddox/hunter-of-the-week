@@ -1,3 +1,4 @@
+//topLevel Reducer 
 import { combineReducers } from "redux";
 import { ADD_NEW_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
@@ -13,7 +14,8 @@ const activeCharacterList = (previousState = [], action) => {
         case ADD_NEW_CHARACTER:
             let newCharacter = getNewCharacter(action.payload.guid, action.payload.archetypeId);
             return _.concat(previousState, newCharacter);
-        case REMOVE_ITEM: 
+        case REMOVE_ITEM:
+            //TODO: do this 
             previousState.find( _.without());
             break;
         default:
@@ -21,8 +23,24 @@ const activeCharacterList = (previousState = [], action) => {
     }    
 };
 
+const selectedCharacter = (previousState = -1, action) => {
+    if(!action || !action.type)
+        return previousState;
+    
+    switch(action.type) {
+        case ADD_NEW_CHARACTER:
+            if(previousState < 0)
+                return action.payload.characterId;
+            else
+                return previousState;
+        default:
+            return previousState;
+    }
+};
+
 const topLevelReducer = combineReducers({
-    activeCharacterList
+    activeCharacterList,
+    selectedCharacter
 });
 
 export default topLevelReducer;
