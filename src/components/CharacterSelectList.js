@@ -1,11 +1,11 @@
 //CharacterSelectList Component
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import AddNewCharacterBarContainer from './components/containers/AddNewCharacterBarContainer.js';
+import AddNewCharacterBarContainer from './containers/AddNewCharacterBarContainer.js';
 import CharacterSelect from './CharacterSelect.js';
+import _ from 'lodash';
 
 const CharacterSelectList = (props) => { 
-    //TODO: Next Priority
     return (
         <div className="characterSelectListContainer col-sm-12">
             <div className="row">
@@ -24,10 +24,14 @@ const CharacterSelectList = (props) => {
 };
 
 CharacterSelectList.propTypes = {
-    characterSelectElements: PropTypes.arrayOf(PropTypes.shape({
+    characters: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         archetype: PropTypes.string.isRequired,
-        characterId: PropTypes.number.isRequired
+        characterId: PropTypes.number.isRequired,
+        isCurrentlySelectedCharacter: PropTypes.bool.isRequired
     })),
+    characterSelectElements: PropTypes.arrayOf(PropTypes.instanceOf(CharacterSelect)),
     onCharacterClick: PropTypes.func.isRequired
 };
+
+export default CharacterSelectList;

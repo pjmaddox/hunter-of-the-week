@@ -23,7 +23,7 @@ const CharacterSelect = (props) => {
 };
 
 CharacterSelect.propTypes = {
-    isCurrentlyselectedCharacter: PropTypes.bool.isRequired,
+    isCurrentlySelectedCharacter: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
     archetype: PropTypes.string.isRequired,
     onCharacterClick: PropTypes.func.isRequired,

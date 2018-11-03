@@ -92,6 +92,7 @@ describe("currentlySelectedCharacter", () => {
             }
         };
         let result = topLevelReducer(emptyPreviousState,newCharacterAction);
+        console.log(result);
         expect(result.selectedCharacter).toEqual(expectedCharacterId);
     });
 

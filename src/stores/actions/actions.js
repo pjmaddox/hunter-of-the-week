@@ -30,3 +30,13 @@ export const changeSelectedCharacter = (targetCharacterId) => {
         }
     };
 };
+
+export const CHANGE_LUCK_FOR_CHARACTER = "CHANGE_LUCK_FOR_CHARACTER";
+export const changeLuckForCharacter = (targetCharacterId) => {
+
+};
+
+export const CHANGE_XP_FOR_CHARACTER = "CHANGE_XP_FOR_CHARACTER";
+export const changeXpForCharacter = (targetCharacterId) => {
+    
+};
