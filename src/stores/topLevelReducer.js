@@ -12,7 +12,7 @@ const activeCharacterList = (previousState = [], action) => {
 
     switch(action.type){
         case ADD_NEW_CHARACTER:
-            let newCharacter = getNewCharacter(action.payload.guid, action.payload.archetypeId);
+            let newCharacter = getNewCharacter(action.payload.characterId, action.payload.archetypeId);
             return _.concat(previousState, newCharacter);
         case REMOVE_ITEM:
             //TODO: do this 

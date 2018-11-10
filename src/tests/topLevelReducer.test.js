@@ -15,19 +15,19 @@ describe("activeCharacterList", () => {
         fakeAddAction = {
             type: ADD_NEW_CHARACTER,
             payload: {
-                guid: 555,
+                characterId: 555,
                 archetypeId: 4
             }
         };
     });
 
     it("should return the previous state when action is null", () => {
-        let result = topLevelReducer(emptyPreviousState, null).activeCharacterList;
+        let result = topLevelReducer(emptyPreviousState, null);
         expect(result.activeCharacterList).toEqual(emptyArray);
     });
 
     it("should return the previous state when action type is null", () => {
-        let result = topLevelReducer(emptyPreviousState, { type: null }).activeCharacterList;
+        let result = topLevelReducer(emptyPreviousState, { type: null });
         expect(result.activeCharacterList).toEqual(emptyArray);
     });
 
@@ -41,9 +41,9 @@ describe("activeCharacterList", () => {
         expect(result[1].name).toEqual("");
     });
 
-    it("Should have created a character that has the expected guid as an id", () => {
+    it("Should have created a character that has the expected characterId as an id", () => {
         let result = topLevelReducer(fakePreviousState, fakeAddAction).activeCharacterList;
-        expect(result[1].id).toEqual(fakeAddAction.payload.guid);
+        expect(result[1].id).toEqual(fakeAddAction.payload.characterId);
     });
 
     it("Should have created a character that has the expected archetypeId as it's archetype id", () => {
@@ -67,7 +67,7 @@ describe("currentlySelectedCharacter", () => {
         fakeAddAction = {
             type: ADD_NEW_CHARACTER,
             payload: {
-                guid: 555,
+                characterId: 555,
                 archetypeId: 4
             }
         };
@@ -87,12 +87,11 @@ describe("currentlySelectedCharacter", () => {
         let newCharacterAction = {
             type: ADD_NEW_CHARACTER,
             payload: {
-                id: expectedCharacterId,
+                characterId: expectedCharacterId,
                 archetypeId: 3
             }
         };
         let result = topLevelReducer(emptyPreviousState,newCharacterAction);
-        console.log(result);
         expect(result.selectedCharacter).toEqual(expectedCharacterId);
     });
 
@@ -108,7 +107,7 @@ describe("currentlySelectedCharacter", () => {
         let newCharacterAction = {
             type: ADD_NEW_CHARACTER,
             payload: {
-                id: unexpectedCharacterId,
+                characterId: unexpectedCharacterId,
                 archetypeId: 15
             }
         };
