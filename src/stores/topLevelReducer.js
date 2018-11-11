@@ -33,6 +33,8 @@ const selectedCharacter = (previousState = -1, action) => {
                 return action.payload.characterId;
             else
                 return previousState;
+        case CHANGE_SELECTED_CHARACTER:
+            return action.payload.characterId;
         default:
             return previousState;
     }

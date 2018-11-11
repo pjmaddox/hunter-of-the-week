@@ -1,6 +1,6 @@
 //TopLevelReducer Test
 import topLevelReducer from "../stores/topLevelReducer.js";
-import { ADD_NEW_CHARACTER, addNewCharacter } from "../stores/actions/actions.js";
+import { ADD_NEW_CHARACTER, addNewCharacter, changeSelectedCharacter } from "../stores/actions/actions.js";
 
 describe("activeCharacterList", () => {
     let fakePreviousState, emptyPreviousState, emptyArray, fakeAddAction;
@@ -112,6 +112,21 @@ describe("currentlySelectedCharacter", () => {
             }
         };
         let result = topLevelReducer(previousState, newCharacterAction);
+        expect(result.selectedCharacter).toEqual(expectedCharacterId);
+    });
+
+    it("should change the selected character to the provided chracterId when type is changeSelectedCharacter", () => {
+        let unexpectedCharacterId = 9595959;
+        let expectedCharacterId = 123123;
+        let previousState = {
+            activeCharacterList: [
+                { name: "Jesus", id: unexpectedCharacterId },
+                { name: "Jesus2ElectricBoogaloo", id: expectedCharacterId }
+            ],
+            selectedCharacter: unexpectedCharacterId
+        };
+        let changeSelectedCharacterAction = changeSelectedCharacter(expectedCharacterId);
+        let result = topLevelReducer(previousState, changeSelectedCharacterAction);
         expect(result.selectedCharacter).toEqual(expectedCharacterId);
     });
 });
