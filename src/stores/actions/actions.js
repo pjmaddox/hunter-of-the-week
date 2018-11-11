@@ -34,7 +34,7 @@ export const changeSelectedCharacter = (targetCharacterId) => {
 export const CHANGE_LUCK_FOR_CHARACTER = "CHANGE_LUCK_FOR_CHARACTER";
 export const changeLuckForCharacter = (targetCharacterId, newLuckValue) => {
     return {
-        type: CHANGE_SELECTED_CHARACTER,
+        type: CHANGE_LUCK_FOR_CHARACTER,
         payload: {
             characterId: targetCharacterId,
             newValue: newLuckValue
@@ -45,7 +45,7 @@ export const changeLuckForCharacter = (targetCharacterId, newLuckValue) => {
 export const CHANGE_XP_FOR_CHARACTER = "CHANGE_XP_FOR_CHARACTER";
 export const changeXpForCharacter = (targetCharacterId, newXpValue) => {
     return {
-        type: CHANGE_SELECTED_CHARACTER,
+        type: CHANGE_XP_FOR_CHARACTER,
         payload: {
             characterId: targetCharacterId,
             newValue: newXpValue

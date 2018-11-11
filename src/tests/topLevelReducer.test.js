@@ -1,6 +1,6 @@
 //TopLevelReducer Test
 import topLevelReducer from "../stores/topLevelReducer.js";
-import { ADD_NEW_CHARACTER, addNewCharacter, changeSelectedCharacter } from "../stores/actions/actions.js";
+import { ADD_NEW_CHARACTER, addNewCharacter, changeSelectedCharacter, CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
 
 describe("activeCharacterList", () => {
     let fakePreviousState, emptyPreviousState, emptyArray, fakeAddAction;
