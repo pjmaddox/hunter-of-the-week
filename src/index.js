@@ -7,7 +7,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import topLevelReducer from "./stores/topLevelReducer.js";
 
-const store = createStore(topLevelReducer);
+const store = createStore(topLevelReducer, 
+    //DEV ONLY
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
     <Provider store={store}>

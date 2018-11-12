@@ -7,16 +7,17 @@ export default class AddNewCharacterBar extends Component {
         super(props);
         this.state = { selectedArchetypeValue: -1 };
         this.handleOptionChange = this.handleOptionChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         // this.onAddClick = this.props.onAddClick.bind(this);
     }
     handleOptionChange(valueChangeEvent) {
         this.setState({selectedArchetypeValue: valueChangeEvent.target.value});
     }
-    // handleSubmit(event) {
-    //     this.props.onAddClick(this.state.selectedArchetypeValue);
-    //     event.preventDefault();
-    // }
+    handleSubmit(event) {
+        if(this.state.selectedArchetypeValue >= 0)
+            this.props.onAddClick(this.state.selectedArchetypeValue);
+        event.preventDefault();
+    }
     render() {
         let archetypeOptions = _.map(this.props.archetypeList, (ax) => {
             return (

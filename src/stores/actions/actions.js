@@ -4,7 +4,7 @@ export const addNewCharacter = (archetypeId) => {
     return {
         type: ADD_NEW_CHARACTER,
         payload: {
-            guid: d.getTime(), //TODO: replace this with something actually useful
+            characterId: d.getTime(), //TODO: replace this with something actually useful
             archetypeId: archetypeId
         }
     };

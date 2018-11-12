@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onButtonClick: classId => { dispatch(addNewCharacter(classId)); }
+        onAddClick: classId => { dispatch(addNewCharacter(classId)); }
     };
 };
 

@@ -15,7 +15,9 @@ class App extends Component {
           </div>
           <div className="col-sm-12 col-md-8 col-lg-10">
             {/* The rest of the app here - the character viewer or some such */}
-            <ExperienceTrackerContainer />
+            <ExperienceTrackerContainer
+              currentXp={3}
+            />
           </div>
         </div>
       </div>

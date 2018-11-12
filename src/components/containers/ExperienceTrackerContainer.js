@@ -2,9 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import CellTrackerArray from "./reusableComponents";
+import CellTrackerArray from "../reusableComponents/CellTrackerArray.js";
 import ExperienceTracker from '../ExperienceTracker.js';
-import updateExperienceForCharacter from '../../store/actions/actions.js';
+import { changeXpForCharacter } from '../../stores/actions/actions.js';
 import _ from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,17 +14,17 @@ const mapStateToProps = (state, ownProps) => {
     //Or:
     let currentXp = ownProps.currentXp
     return {
-        currentXp: currentXp
+        currentXp: ownProps.currentXp
     };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        handleXpChange: (newValue) => { dispatch(updateExperienceForCharacter(ownProps.characterId, newValue)); }
+        handleXpChange: (newValue) => { dispatch(changeXpForCharacter(ownProps.characterId, newValue)); }
     };
 };
 
-export default connect({
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-})(ExperienceTracker);
+)(ExperienceTracker);
