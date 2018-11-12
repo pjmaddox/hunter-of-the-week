@@ -26,7 +26,7 @@ export default class AddNewCharacterBar extends Component {
         });
         return (
             <div className="addNewCharacterBarContainer">
-                <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange} className="archetypeSelect">
+                <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange} className="archetypeSelect form-control">
                     <option value={-1}>Select Archetype</option>
                     {archetypeOptions}
                 </select>
