@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import AddNewCharacterBarContainer from './containers/AddNewCharacterBarContainer.js';
+import CharacterSelect from './CharacterSelect.js'
 import _ from 'lodash';
 
 const CharacterSelectList = (props) => { 
