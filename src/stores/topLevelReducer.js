@@ -29,7 +29,6 @@ const selectedCharacter = (previousState = -1, action) => {
     
     switch(action.type) {
         case ADD_NEW_CHARACTER:
-            console.log(action);
             if(previousState < 0)
             {
                 return action.payload.characterId;
