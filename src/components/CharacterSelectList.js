@@ -1,7 +1,7 @@
 //CharacterSelectList Component
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import AddNewCharacterBarContainer from './containers/AddNewCharacterBarContainer.js';
+import AddNewCharacterBarContainer from "./containers/AddNewCharacterBarContainer";
 import CharacterSelect from './CharacterSelect.js'
 import _ from 'lodash';
 
