@@ -21,10 +21,6 @@ describe("characterSelectList render", () => {
             onCharacterClick={mockOnCharacterClick}
         />);
     });
-    // it("should render an addNewCharacterBar", () => {
-    //     let result = shallowNode.find("AddNewCharacterBarContainer");
-    //     expect(result.length).toEqual(1);
-    // });
     it("should render a CharacterSelect for each character in the charactes prop", () => {
         let result = shallowNode.find("CharacterSelect");
         expect(result.length).toEqual(expectedCharacterList.length);
