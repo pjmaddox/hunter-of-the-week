@@ -31,8 +31,6 @@ describe("Experience Tracker Render", () => {
     });
     it("should render a cellTrackerArray wit hthe handleValueChange function mapped to the handleXpChange function", () => {
         let result = shallowNode.find("CellTrackerArray");
-        // console.log(result.first().props().handleValueChange);
-        // console.log(mockHandleXpChangeFunction.mock);
         expect(result.first().props().handleValueChange).toEqual(mockHandleXpChangeFunction);
     });
     it("should render a cellTrackerArray with the trackerLabelText 'XP'", () => {
@@ -46,5 +44,13 @@ describe("Experience Tracker Render", () => {
     it("should render a cellTrackerArray with the cellColorText as 'grey'", () => {
         let result = shallowNode.find("CellTrackerArray");
         expect(result.first().props().cellColorText).toEqual("grey");
+    });
+    it("should render a cellTrackerArray with the showMinusButtom prop set to true",() => {
+        let result = shallowNode.find("CellTrackerArray");
+        expect(result.first().props().renderMinusButton).toEqual(true);
+    });
+    it("should rende a cellTrackerArray with the showPlusButton prop set to true", () => {
+        let result = shallowNode.find("CellTrackerArray");
+        expect(result.first().props().renderPlusButton).toEqual(true);
     });
 });

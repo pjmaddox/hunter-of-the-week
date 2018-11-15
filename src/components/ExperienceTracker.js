@@ -13,6 +13,10 @@ const ExperienceTracker = (props) => {
                 trackerLabelText={"XP"}
                 hasClearAllButton={true}
                 cellColorText={"grey"}
+                renderMinusButton={true}
+                renderPlusButton={true}
+                onMinusButtonClick={() => {props.handleXpChange(props.currentXp-1)}}
+                onPlusButtonClick={() => {props.handleXpChange(props.currentXp+1)}}
             />
         </div>
     );
