@@ -21,20 +21,29 @@ const CellTrackerArray = (props) => {
     }
 
     let clearAllButton = props.hasClearAllButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(0);}} classes={"btn btn-default btn-primary"} styleObject={{}} buttonText={"Clear All"} />
+        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(0);}} classes={"btn btn-default btn-secondary"} styleObject={{}} buttonText={"Clear All"} />
+        : "";
+    let minusButton = props.hasPlusButton? 
+        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue-1);}} classes={"cellTrackerMinusButton"} styleObject={{}} buttonText={"-"} />
+        : "";
+    let plusButton = props.hasMinusButton? 
+        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue+1);}} classes={"cellTrackerPlusButton"} styleObject={{}} buttonText={"+"} />
         : "";
     return (
         <div className="cellTrackerArrayContainer row">
-            {/* some kind of label */}
-            <div className="col-sm-6 col-md-3">
+            <div className="col-sm-6 col-md-1">
                 <span>{props.trackerLabelText}</span>
             </div>
-            {/* tracker itself */}
-            <div className="col-sm-12 col-md-7">
+            <div className="col-sm-1">
+                {minusButton}
+            </div>
+            <div className="col-sm-6 col-md-8">
                 {trackerCells}
             </div>
-            {/* clearAll button - DoSomethingButton w/ handleValueChange(0) */}
-            <div className="col-sm-12 col-md-2">
+            <div className="col-sm-1">
+                {plusButton}
+            </div>
+            <div className="col-sm-12 col-md-1">
                 {clearAllButton}
             </div>
         </div>
@@ -46,7 +55,9 @@ CellTrackerArray.propTypes = {
     maxValue: PropTypes.number.isRequired,
     handleValueChange: PropTypes.func.isRequired,
     trackerLabelText: PropTypes.string.isRequired,
-    hasClearAllButton: PropTypes.bool.isRequired,
+    hasClearAllButton: PropTypes.bool,
+    hasPlusButton: PropTypes.bool,
+    hasMinusButton: PropTypes.bool,
     cellColorText: PropTypes.string
 };
 

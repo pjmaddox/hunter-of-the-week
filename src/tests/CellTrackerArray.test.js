@@ -65,4 +65,91 @@ describe("CellTrackerArray Render", () => {
         let result = shallowNode.find("TrackerCell");
         expect(result.first().props().fillColorText).toEqual(expectedBackgroundColor);
     });
+
+    it("should render a plus button when not given a hasPlusButton value", () => {
+        expect();
+    });
+
+    it("should render a minus button when not given a hasMinusButton value", () => {
+        expect();
+    });
+
+    it("should render a plus button when hasPlusButton is true", () => {
+        let shallowNode = shallow(<CellTrackerArray 
+            currentValue={expectedCurrentValue}
+            maxValue={expectedMaxValue}
+            hasClearAllButton={false}
+            handleValueChange={mockHandleValueChangeFunction}
+            trackerLabelText={expectedtTackerLabel}
+            hasPlusButton={true}
+        />);
+        let result = shallowNode.find(".cellTrackerPlusButton");
+        expect(result.length).toEqual(1);
+    });
+
+    it("should render a minus button when hasMinusButton is true", () => {
+        let shallowNode = shallow(<CellTrackerArray 
+            currentValue={expectedCurrentValue}
+            maxValue={expectedMaxValue}
+            hasClearAllButton={false}
+            handleValueChange={mockHandleValueChangeFunction}
+            trackerLabelText={expectedtTackerLabel}
+            hasMinusButton={true}
+        />);
+        let result = shallowNode.find(".cellTrackerMinusButton");
+        expect(result.length).toEqual(1);
+    });
+
+    it("should not render a plus button when hasPlusButton is false", () => {
+        let shallowNode = shallow(<CellTrackerArray 
+            currentValue={expectedCurrentValue}
+            maxValue={expectedMaxValue}
+            hasClearAllButton={false}
+            handleValueChange={mockHandleValueChangeFunction}
+            trackerLabelText={expectedtTackerLabel}
+            hasMinusButton={false}
+        />);
+        let result = shallowNode.find(".cellTrackerPlusButton");
+        expect(result.length).toEqual(0);
+    });
+
+    it("should not render a minus button when hasMinusButton is false", () => {
+        let shallowNode = shallow(<CellTrackerArray 
+            currentValue={expectedCurrentValue}
+            maxValue={expectedMaxValue}
+            hasClearAllButton={false}
+            handleValueChange={mockHandleValueChangeFunction}
+            trackerLabelText={expectedtTackerLabel}
+            hasMinusButton={false}
+        />);
+        let result = shallowNode.find(".cellTrackerMinusButton");
+        expect(result.length).toEqual(0);
+    });
+
+    it("should call handleValueChange with the currentValue plus 1 when the plus button is clicked", () => {
+        let target = shallowNode.find(".cellTrackerPlusButton").first();
+        let fakeEvent = { target: { value: {} } };
+        target.simulate("click", fakeEvent);
+        expect(mockHandleValueChangeFunction.mock.calls.length).toEqual(1);
+        console.log(mockHandleValueChangeFunction.mock.calls[0]);
+        expect(mockHandleValueChangeFunction.mock.calls[0][0]).toEqual(expectedCurrentValue+1);
+    });
+
+    it("should call handleValueChange with the currentValue minus 1 when the minus button is clicked", () => {
+        let target = shallowNode.find(".cellTrackerMinusButton").first();
+        let fakeEvent = { target: { value: {} } };
+        target.simulate("click", fakeEvent);
+        expect(mockHandleValueChangeFunction.mock.calls.length).toEqual(1);
+        expect(mockHandleValueChangeFunction.mock.calls[0][0]).toEqual(expectedCurrentValue-1);
+    });
+
+    it("should render the plus button as disabled when currentValue is equal to Max Value", () => {
+        //TODO
+        expect(true).toEqual(false);
+    });
+
+    it("should render the minus button as disabled when the currentVlaue is euqla to 0", () => {
+        //TODO
+        expect(true).toEqual(false);
+    });
 });
