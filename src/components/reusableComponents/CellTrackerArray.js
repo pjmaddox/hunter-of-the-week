@@ -12,6 +12,7 @@ const CellTrackerArray = (props) => {
     for(let i = 0; i < props.maxValue; ++i) {
         let singleCell = <TrackerCell 
             key={"trackerCell" + i}
+            cellKey={"trackerCell-" + i}
             isFilled={(i<props.currentValue)? true : false}
             fillColorText={cellColor}
             //TODO: this is a great point and i don't know how to get around it at this moment

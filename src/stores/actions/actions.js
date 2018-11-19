@@ -1,10 +1,18 @@
+var genUnique = (function() {
+    var count = 0;
+    return function() {
+      return 'id' + count++;
+    }
+  })();
+
 export const ADD_NEW_CHARACTER = "ADD_NEW_CHARACTER";
 export const addNewCharacter = (archetypeId) => {
-    var d = new Date();
+    var d = (new Date()).getTime();
+    d = genUnique();
     return {
         type: ADD_NEW_CHARACTER,
         payload: {
-            characterId: d.getTime(), //TODO: replace this with something actually useful
+            characterId: d, //TODO: replace this with something actually useful
             archetypeId: archetypeId
         }
     };

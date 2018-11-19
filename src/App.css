@@ -38,3 +38,57 @@
 .characterSelectContainer{
   cursor: pointer;
 }
+
+/* TrackerCell */
+.trackerCell {
+  margin-left: 3px;
+  display: inline-block;
+}
+
+.trackerCellLabel {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 0px;
+  margin:auto;
+  padding:0px;
+  position: relative;
+}
+
+.trackerCellLabel::before,.trackerCellLabel::after {
+  position: absolute;
+}
+
+.trackerCellLabel::before {
+  content: "";
+  display: inline-block;
+}
+
+.trackerCellLabel::after {
+  content: "";
+  display: inline-block;
+  transform: rotate(-45deg);
+  height: 8px;
+  width: 14px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-color: black;
+  padding: 0px;
+  margin: auto;
+  top:.3rem;
+  left: .2rem;
+}
+
+/* Hide the checkmark (label::after) by default */
+.trackerCellLabel input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/* show the checkmark (label::after) when input is in state 'checked' */
+.trackerCellLabel input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.trackerCellLabel input[type="checkbox"] {
+  opacity: 0;
+}
