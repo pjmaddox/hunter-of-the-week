@@ -43,9 +43,10 @@
 .trackerCell {
   margin-left: 3px;
   display: inline-block;
+  border: green 2px solid;
 }
 
-.trackerCellLabel {
+.trackerCell {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
@@ -53,6 +54,7 @@
   margin:auto;
   padding:0px;
   position: relative;
+  margin-left: 3px;
 }
 
 .trackerCellLabel::before,.trackerCellLabel::after {
@@ -61,12 +63,11 @@
 
 .trackerCellLabel::before {
   content: "";
-  display: inline-block;
+  cursor: pointer;
 }
 
 .trackerCellLabel::after {
   content: "";
-  display: inline-block;
   transform: rotate(-45deg);
   height: 8px;
   width: 14px;
@@ -77,18 +78,20 @@
   margin: auto;
   top:.3rem;
   left: .2rem;
+  cursor: pointer;
 }
 
 /* Hide the checkmark (label::after) by default */
-.trackerCellLabel input[type="checkbox"] + label::after {
+.trackerCell input[type="checkbox"] + label::after {
   content: none;
+  cursor: pointer;
 }
-
 /* show the checkmark (label::after) when input is in state 'checked' */
-.trackerCellLabel input[type="checkbox"]:checked + label::after {
+.trackerCell input[type="checkbox"]:checked + label::after {
   content: "";
+  cursor: pointer;
 }
 
-.trackerCellLabel input[type="checkbox"] {
+.trackerCell input[type="checkbox"] {
   opacity: 0;
 }
