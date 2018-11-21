@@ -12,6 +12,7 @@ const CharacterSelectList = (props) => {
             name={cx.name}
             archetype={cx.archetype}
             onCharacterClick={() => {props.onCharacterClick(cx.characterId)}}
+            key={"cx-" + cx.characterId}
         />
     });
     return (

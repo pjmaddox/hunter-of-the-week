@@ -30,13 +30,16 @@ describe("characterSelectList render", () => {
         let result = shallowNode.find("CharacterSelect");
         result.forEach((cx, i) => {
             console.log(cx);
-            expect(cx.props().isCurrentlySelectedCharacter).toEqual(expectedCharacterSelectElements[i].props.isCurrentlySelectedCharacter);
-            expect(cx.props().name).toEqual(expectedCharacterSelectElements[i].props.name);
-            expect(cx.props().archetype ).toEqual(expectedCharacterSelectElements[i].props.archetype);
-            expect(cx.props().onCharacterClick).toEqual(mockOnCharacterClick);
+            expect(cx.props().isCurrentlySelectedCharacter).toEqual(expectedCharacterList[i].isCurrentlySelectedCharacter);
+            expect(cx.props().name).toEqual(expectedCharacterList[i].name);
+            expect(cx.props().archetype ).toEqual(expectedCharacterList[i].archetype);
         });
     });
     it("should call the onCharacterSelectClick function with the character's id when clicked", () => {
-        expect(true).toEqual(false);    
+        var firstCharacterSelectNode = shallowNode.find("CharacterSelect").first();
+        let fakeEvent = { target: { value: {}} }
+        firstCharacterSelectNode.simulate("click", fakeEvent);
+        expect(mockOnCharacterClick.mock.calls.length).toEqual(1);
+        expect(mockOnCharacterClick.mock.calls[0][0]).toEqual(expectedCharacterList);
     });
 });
