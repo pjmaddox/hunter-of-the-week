@@ -6,18 +6,19 @@ import CharacterSelectList from "../components/CharacterSelectList";
 configure({adapter: new Adapter()});
 
 describe("characterSelectList render", () => {
-    let shallowNode, expectedCharacterList, mockOnCharacterClick, expectedCharacterSelectElements;
+    let shallowNode, expectedCharacterList, mockOnCharacterClick;
     beforeEach(() => {
+        mockOnCharacterClick = jest.fn();
         expectedCharacterList = [
             //TODO ADD DATA
-        ];
-        expectedCharacterSelectElements = [
-            //TODO ADD ELEMENTS
+            { characterId: "123123", name:"Sam Samson The First", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: "124124", name:"Sam Samson The Second", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: "125125", name:"Sam Samson The Third", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: "126126", name:"Sam Samson The Fourth", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: true, onCharacterClick: mockOnCharacterClick }
         ];
         mockOnCharacterClick = jest.fn();
         shallowNode = shallow(<CharacterSelectList 
             characters={expectedCharacterList}
-            CharacterSelectElements={expectedCharacterSelectElements}
             onCharacterClick={mockOnCharacterClick}
         />);
     });
@@ -34,5 +35,8 @@ describe("characterSelectList render", () => {
             expect(cx.props().archetype ).toEqual(expectedCharacterSelectElements[i].props.archetype);
             expect(cx.props().onCharacterClick).toEqual(mockOnCharacterClick);
         });
+    });
+    it("should call the onCharacterSelectClick function with the character's id when clicked", () => {
+        expect(true).toEqual(false);    
     });
 });

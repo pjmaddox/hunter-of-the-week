@@ -53,4 +53,5 @@ describe("Experience Tracker Render", () => {
         let result = shallowNode.find("CellTrackerArray");
         expect(result.first().props().renderPlusButton).toEqual(true);
     });
+    
 });

@@ -7,7 +7,7 @@ const TrackerCell = (props) => {
     return (
         <div className="trackerCell" style={{}} onClick={props.onCellClick}>
             <input type="checkbox" checked={props.isFilled} readOnly={true} key={props.cellKey} id={props.cellKey}/>
-            <label for={props.cellKey} className="trackerCellLabel "></label>
+            <label htmlFor={props.cellKey} className="trackerCellLabel "></label>
         </div>
     );
 };

@@ -5,7 +5,15 @@ import AddNewCharacterBarContainer from "./containers/AddNewCharacterBarContaine
 import CharacterSelect from './CharacterSelect.js'
 import _ from 'lodash';
 
-const CharacterSelectList = (props) => { 
+const CharacterSelectList = (props) => {
+    var characterSelectElements = _.map(props.characters, (cx, i) => {
+        return <CharacterSelect 
+            isCurrentlySelectedCharacter={cx.isCurrentlySelectedCharacter}
+            name={cx.name}
+            archetype={cx.archetype}
+            onCharacterClick={() => {props.onCharacterClick(cx.characterId)}}
+        />
+    });
     return (
         <div className="characterSelectListContainer col-sm-12">
             <div className="row">
@@ -16,7 +24,7 @@ const CharacterSelectList = (props) => {
             <br/>
             <div className="row">
                 <div className="col-sm-12">
-                    {props.characterSelectElements}
+                    {characterSelectElements}
                 </div>
             </div>
         </div>

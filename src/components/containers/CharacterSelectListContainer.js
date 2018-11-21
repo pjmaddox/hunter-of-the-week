@@ -9,7 +9,7 @@ import CharacterSelect from '../CharacterSelect.js';
 const mapStateToProps = state => {
     return {
         characters: _.map(state.activeCharacterList, (cx, i) => { 
-            return { name: cx.name, archetype: cx.archetype, characterId: cx.characterId, isCurrentlySelectedCharacter: (cx.characterId==state.currentlySelectedCharacter) };
+            return { name: cx.name, archetype: cx.archetype, characterId: cx.characterId, isCurrentlySelectedCharacter: (cx.characterId===state.currentlySelectedCharacter) };
         }),
         characterSelectElements: _.map(state.activeCharacterList, (cx, i) => { 
             return _.map(state.activeCharacterList, (cx, i) => {
@@ -19,6 +19,7 @@ const mapStateToProps = state => {
                         archetype={cx.archetype}
                         characterId={cx.characterId}
                         isCurrentlySelectedCharacter={(cx.characterId===state.currentlySelectedCharacter)}
+                        key={cx.name + cx.characterId}
                     />
                 );
             });
