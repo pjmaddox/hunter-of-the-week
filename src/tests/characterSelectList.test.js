@@ -11,10 +11,10 @@ describe("characterSelectList render", () => {
         mockOnCharacterClick = jest.fn();
         expectedCharacterList = [
             //TODO ADD DATA
-            { characterId: "123123", name:"Sam Samson The First", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
-            { characterId: "124124", name:"Sam Samson The Second", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
-            { characterId: "125125", name:"Sam Samson The Third", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
-            { characterId: "126126", name:"Sam Samson The Fourth", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: true, onCharacterClick: mockOnCharacterClick }
+            { characterId: 123123, name:"Sam Samson The First", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: 124124, name:"Sam Samson The Second", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: 125125, name:"Sam Samson The Third", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: false, onCharacterClick: mockOnCharacterClick },
+            { characterId: 126126, name:"Sam Samson The Fourth", archetype:"The Googly-Eyed", isCurrentlySelectedCharacter: true, onCharacterClick: mockOnCharacterClick }
         ];
         mockOnCharacterClick = jest.fn();
         shallowNode = shallow(<CharacterSelectList 

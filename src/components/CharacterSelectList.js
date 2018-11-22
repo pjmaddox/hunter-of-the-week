@@ -39,7 +39,6 @@ CharacterSelectList.propTypes = {
         characterId: PropTypes.number.isRequired,
         isCurrentlySelectedCharacter: PropTypes.bool.isRequired
     })),
-    characterSelectElements: PropTypes.arrayOf(PropTypes.instanceOf(CharacterSelect)),
     onCharacterClick: PropTypes.func.isRequired
 };
 
