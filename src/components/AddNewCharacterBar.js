@@ -26,12 +26,16 @@ export default class AddNewCharacterBar extends Component {
         });
         let isDisabledValue = (this.state.selectedArchetypeValue === -1);
         return (
-            <div className="addNewCharacterBarContainer">
-                <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange} className="archetypeSelect form-control">
-                    <option value={-1} disabled>Select Archetype</option>
-                    {archetypeOptions}
-                </select>
-                <button onClick={() => { this.props.onAddClick(this.state.selectedArchetypeValue); }} className="createNewCharacterButton btn btn-default" disabled={isDisabledValue}>Create New</button>
+            <div className="addNewCharacterBarContainer row">
+                <div className="col-sm-12 col-md-9">
+                    <select value={this.state.selectedArchetypeValue} onChange={this.handleOptionChange} className="archetypeSelect form-control">
+                        <option value={-1} disabled>Select Archetype</option>
+                        {archetypeOptions}
+                    </select>
+                </div>
+                <div className="col-sm-12 col-md-3">
+                    <button onClick={() => { this.props.onAddClick(this.state.selectedArchetypeValue); }} className="createNewCharacterButton btn btn-default" disabled={isDisabledValue}>New</button>
+                </div>
             </div>
         );
     }

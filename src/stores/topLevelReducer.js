@@ -24,6 +24,7 @@ const activeCharacterList = (previousState = [], action) => {
 };
 
 const selectedCharacter = (previousState = -1, action) => {
+    console.log(action);
     if(!action || !action.type)
         return previousState;
     

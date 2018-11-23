@@ -10,10 +10,10 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <div className="col-sm-12 col-md-4 col-lg-2">
+          <div className="col-sm-12 col-md-3">
             <CharacterSelectListContainer/>
           </div>
-          <div className="col-sm-12 col-md-8 col-lg-10">
+          <div className="col-sm-12 col-md-9">
             {/* The rest of the app here - the character viewer or some such */}
             <ExperienceTrackerContainer
               currentXp={3}
