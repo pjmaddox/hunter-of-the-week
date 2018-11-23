@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 const CharacterSelectList = (props) => {
     var characterSelectElements = _.map(props.characters, (cx, i) => {
+        console.log(cx);
         return <CharacterSelect 
             isCurrentlySelectedCharacter={cx.isCurrentlySelectedCharacter}
             name={cx.name}

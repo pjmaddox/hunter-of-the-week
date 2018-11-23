@@ -7,6 +7,7 @@ import { changeSelectedCharacter } from "../../stores/actions/actions.js";
 import CharacterSelect from '../CharacterSelect.js';
 
 const mapStateToProps = state => {
+    console.log(state.activeCharacterList);
     return {
         characters: _.map(state.activeCharacterList, (cx, i) => { 
             return { name: cx.name, archetype: cx.archetype, characterId: cx.characterId, isCurrentlySelectedCharacter: (cx.characterId===state.currentlySelectedCharacter) };
