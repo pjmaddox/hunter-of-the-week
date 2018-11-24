@@ -15,7 +15,7 @@ const CharacterSelect = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
-                        <span className="characterSelect-archetype">{props.archetype}</span>
+                        <span className="characterSelect-archetype">- {props.archetype}</span>
                     </div>
                 </div>
             </div>

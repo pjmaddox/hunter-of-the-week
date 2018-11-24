@@ -1,16 +1,19 @@
 import connect from 'react-redux';
 import TheMundanePlaybook from "../TheMundanePlaybook.js";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+    return {
+        
+    };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
 
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-
-    };
-};
-
-export default connect()();
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TheMundanePlaybook);
