@@ -4,13 +4,14 @@ import CharacterSelectList from '../CharacterSelectList.js';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { changeSelectedCharacter } from "../../stores/actions/actions.js";
+import { validArchetypesAsObjects } from "../../data/archetypeList.js";
 import CharacterSelect from '../CharacterSelect.js';
 
 const mapStateToProps = state => {
     console.log(state.activeCharacterList);
     return {
         characters: _.map(state.activeCharacterList, (cx, i) => { 
-            return { name: cx.name, archetype: cx.archetype, characterId: cx.characterId, isCurrentlySelectedCharacter: (cx.characterId===state.currentlySelectedCharacter) };
+            return { name: cx.name, archetype: validArchetypesAsObjects[cx.archetypeId].text, characterId: cx.characterId, isCurrentlySelectedCharacter: (cx.characterId===state.currentlySelectedCharacter) };
         })
     }
 };
