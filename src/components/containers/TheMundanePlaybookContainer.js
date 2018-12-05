@@ -1,9 +1,11 @@
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import TheMundanePlaybook from "../TheMundanePlaybook.js";
+import _ from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
+    var character = _.find(state.activeCharacterList, { characterId: ownProps.characterId });
     return {
-        
+        //TODO
     };
 };
 
