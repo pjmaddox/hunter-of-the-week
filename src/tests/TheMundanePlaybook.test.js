@@ -8,10 +8,16 @@ configure({adapter: new Adapter()});
 describe("The Mundane Plabook render", () => {
     let shallowNode;
     beforeEach(() => {
-        shallowNode = shallow();
+        
+        shallowNode = shallow(<TheMundanePlaybook 
+            
+        />);
     });
     it("should render a NameAndArchetypeTitle", () => {
         var nameAndArchetypeTitleList = shallowNode.find("NameAndArchetypeTitle");
         expect(nameAndArchetypeTitleList.length).toEqual(1);
+    });
+    it("should be a placeholder", () => {
+        expect(true).toEqual(false);
     });
 });
