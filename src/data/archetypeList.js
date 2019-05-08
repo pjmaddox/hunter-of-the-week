@@ -1,14 +1,14 @@
-// export const validArchetypesAsDictionary = [
-//     TheChosen=0,
-//     TheDivine=1,
-//     TheExpert=2,
-//     TheFlake=3,
-//     TheInitiate=4,
-//     TheMonstrous=5,
-//     TheMundane=6,
-//     TheSpooky=7,
-//     TheWronged=8,
-// ];
+export const validArchetypesEnum = {
+    TheChosen: 0,
+    TheDivine: 1,
+    TheExpert: 2,
+    TheFlake: 3,
+    TheInitiate: 4,
+    TheMonstrous: 5,
+    TheMundane: 6,
+    TheSpooky: 7,
+    TheWronged: 8,
+};
 
 export const validArchetypesAsObjects = [
     {
