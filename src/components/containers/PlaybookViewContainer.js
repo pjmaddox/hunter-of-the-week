@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 
     const characterData = _.filter(state.activeCharacterList, (char) => {
         return char.id === selectedId;
-    });
+    })[0];
+
     return {
         characterData
     };

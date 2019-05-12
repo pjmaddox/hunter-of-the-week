@@ -10,7 +10,7 @@ import TheMundanePlaybook from './TheMundanePlaybook';
 import { validArchetypesEnum } from "../data/archetypeList";
 
 const PlaybookView = props => {
-    if (props.characterData === null)
+    if (props.characterData === null || props.characterData === undefined)
         return <div>No Active Character</div>;
 
     var playbook;

@@ -7,7 +7,6 @@ import _ from 'lodash';
 
 const CharacterSelectList = (props) => {
     var characterSelectElements = _.map(props.characters, (cx, i) => {
-        console.log(cx);
         return <CharacterSelect 
             isCurrentlySelectedCharacter={cx.isCurrentlySelectedCharacter}
             name={cx.name}
@@ -37,7 +36,7 @@ CharacterSelectList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         archetype: PropTypes.string.isRequired,
-        characterId: PropTypes.number.isRequired,
+        characterId: PropTypes.string.isRequired,
         isCurrentlySelectedCharacter: PropTypes.bool.isRequired
     })),
     onCharacterClick: PropTypes.func.isRequired

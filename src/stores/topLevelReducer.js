@@ -1,6 +1,7 @@
 //topLevel Reducer 
 import { combineReducers } from "redux";
 import { ADD_NEW_CHARACTER } from "../stores/actions/actions.js";
+import { CREATE_TEST_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
 import { REMOVE_ITEM } from "../stores/actions/actions.js";
 import _ from 'lodash';
@@ -14,6 +15,8 @@ const activeCharacterList = (previousState = [], action) => {
         case ADD_NEW_CHARACTER:
             let newCharacter = getNewCharacter(action.payload.characterId, action.payload.archetypeId);
             return _.concat(previousState, newCharacter);
+        case CREATE_TEST_CHARACTER:
+            return _.concat(previousState, TEST_CHARACTER);
         case REMOVE_ITEM:
             //TODO: do this 
             previousState.find( _.without());
@@ -30,9 +33,12 @@ const selectedCharacter = (previousState = -1, action) => {
     switch(action.type) {
         case ADD_NEW_CHARACTER:
             if(previousState < 0)
-            {
                 return action.payload.characterId;
-            }
+            else
+                return previousState;
+        case CREATE_TEST_CHARACTER:
+            if(previousState < 0)
+                return TEST_CHARACTER.id;
             else
                 return previousState;
         case CHANGE_SELECTED_CHARACTER:
@@ -64,4 +70,20 @@ const getNewCharacter = (characterId, archetypeId) => {
             
         ]
     };
+};
+
+//TEST
+const TEST_CHARACTER = {
+    id: "aljjefehiwuenf121",
+    archetypeId: 6,
+    name: "Test Testerson",
+    currentHarm: 2,
+    currentLuck: 5,
+    currentXp: 3,
+    gearList: [
+
+    ],
+    moves: [
+        
+    ]
 };

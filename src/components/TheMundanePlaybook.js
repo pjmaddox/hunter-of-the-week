@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HarmTrackerContainer from "./containers/HarmTrackerContainer";
 
 const TheMundanePlaybook = (props) => {
-    console.log(props.characterData);
     return (
             <div className="theMundanePlaybookContainer">
-                {props.characterData.name}
+                <div>
+                    The Mundane Playbook
+                </div>
+                <div>
+                    {props.characterData.name}
+                </div>
+                <div className="statTrackers">
+                    <HarmTrackerContainer />
+                </div>
             </div>
         );
 }

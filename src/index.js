@@ -7,6 +7,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import topLevelReducer from "./stores/topLevelReducer.js";
 
+//TEST
+import { createTestCharacter } from "./stores/actions/actions";
+
 const store = createStore(topLevelReducer, 
     //DEV ONLY
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -17,6 +20,9 @@ ReactDOM.render(
     </Provider>
     
 , document.getElementById('root'));
+
+//TEST
+store.dispatch(createTestCharacter());
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

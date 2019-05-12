@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const CharacterSelect = (props) => {
-    let selectedCharacterClass = props.isCurrentlyselectedCharacter? "selectedCharacter" : "";
+    var selectedClassName = (props.isCurrentlySelectedCharacter)? " selectedCharacter" : "";
     let nameDisplay = (props.name === "")? "New Character" : props.name;
     return (
-        <div className={"characterSelectContainer row" + selectedCharacterClass} onClick={props.onCharacterClick}>
+        <div className={"characterSelectContainer row" + selectedClassName} onClick={props.onCharacterClick}>
             <div className="col-sm-12">
                 <div className="row">
                     <div className="col-sm-12">
@@ -15,7 +15,7 @@ const CharacterSelect = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
-                        <span className="characterSelect-archetype">- {props.archetype}</span>
+                        <span className="characterSelect-archetype"> - {props.archetype}</span>
                     </div>
                 </div>
             </div>

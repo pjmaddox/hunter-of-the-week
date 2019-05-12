@@ -9,7 +9,7 @@ import { validArchetypesAsObjects } from "../../data/archetypeList.js";
 const mapStateToProps = state => {
     return {
         characters: _.map(state.activeCharacterList, (cx, i) => { 
-            return { name: cx.name, archetype: validArchetypesAsObjects[cx.archetypeId].text, characterId: cx.id, isCurrentlySelectedCharacter: (cx.characterId===state.currentlySelectedCharacter) };
+            return { name: cx.name, archetype: validArchetypesAsObjects[cx.archetypeId].text, characterId: cx.id, isCurrentlySelectedCharacter: (cx.id===state.selectedCharacter) };
         })
     }
 };

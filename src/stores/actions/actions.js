@@ -18,6 +18,15 @@ export const addNewCharacter = (archetypeId) => {
     };
 };
 
+//TEST
+export const CREATE_TEST_CHARACTER = "CREATE_TEST_CHARACTER";
+export const createTestCharacter = () => {
+    return {
+        type: CREATE_TEST_CHARACTER,
+        payload: { }
+    };
+};
+
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const removeItem = (targetCharacterId, targetItemIndex) => {
     return {

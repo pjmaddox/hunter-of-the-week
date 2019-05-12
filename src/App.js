@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CharacterSelectListContainer from './components/containers/CharacterSelectListContainer.js';
-import PlaybookView from "./components/PlaybookView";
+import PlaybookViewContainer from './components/containers/PlaybookViewContainer';
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
           </div>
           <div className="col-sm-12 col-md-9">
             {/* The rest of the app here - the character viewer or some such */}
-              <PlaybookView />
+              <PlaybookViewContainer />
           </div>
         </div>
       </div>
