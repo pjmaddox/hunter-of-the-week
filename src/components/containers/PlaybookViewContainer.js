@@ -3,18 +3,19 @@ import { connect } from "react-redux";
 import PlaybookView from "../PlaybookView.js";
 import _ from 'lodash';
 
-const mapStateToProps = state => {
-    _.filter(state.activeCharacterList, );
-};
+const mapStateToProps = (state) => {
+    const selectedId = state.selectedCharacter;
+    if (!selectedId)
+        return {
+            characterData: null
+        };
 
-const mapDispatchToProps = dispatch => {
+    const characterData = _.filter(state.activeCharacterList, (char) => {
+        return char.id === selectedId;
+    });
+    return {
+        characterData
+    };
+}
 
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(PlaybookView);
-
-
-//SWITCH TO A NON-CONTAINER FORMAT FOR THIS? WHY ARE WE DOING IT THIS WAY ANYWAYS? SEEMS TO COMPLICATE PASSING PROPS TO COMPONENTS
+export default connect(mapStateToProps)(PlaybookView);

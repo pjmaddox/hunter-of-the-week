@@ -35,8 +35,13 @@
   margin:auto;
 }
 
+/* CharacterSelectList */
 .characterSelectContainer{
   cursor: pointer;
+}
+
+.selectedCharacter {
+  background-color: lightblue;
 }
 
 /* TrackerCell */

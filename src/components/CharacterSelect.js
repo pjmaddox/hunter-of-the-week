@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const CharacterSelect = (props) => {
-    let selectedCharacterClass = props.isCurrentlyselectedCharacter? "" : "";
+    let selectedCharacterClass = props.isCurrentlyselectedCharacter? "selectedCharacter" : "";
     let nameDisplay = (props.name === "")? "New Character" : props.name;
     return (
         <div className={"characterSelectContainer row" + selectedCharacterClass} onClick={props.onCharacterClick}>

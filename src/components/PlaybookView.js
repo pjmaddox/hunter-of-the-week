@@ -30,19 +30,4 @@ const PlaybookView = props => {
     );
 };
 
-const mapStateToProps = (state) => {
-    const selectedId = state.selectedCharacter;
-    if (!selectedId)
-        return {
-            characterData: null
-        };
-
-    const characterData = _.filter(state.activeCharacterList, (char) => {
-        return char.id === selectedId;
-    });
-    return {
-        characterData
-    };
-}
-
-export default connect(mapStateToProps)(PlaybookView);
+export default PlaybookView;

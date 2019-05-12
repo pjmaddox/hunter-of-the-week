@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { changeSelectedCharacter } from "../../stores/actions/actions.js";
 import { validArchetypesAsObjects } from "../../data/archetypeList.js";
-import CharacterSelect from '../CharacterSelect.js';
 
 const mapStateToProps = state => {
     return {
