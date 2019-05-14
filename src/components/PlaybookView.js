@@ -2,6 +2,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { connect } from "react-redux";
+import TheMundanePlaybookContainer from "../components/containers/TheMundanePlaybookContainer";
 
 //Components
 import TheMundanePlaybook from './TheMundanePlaybook';
@@ -16,10 +17,10 @@ const PlaybookView = props => {
     var playbook;
     switch(props.characterData.archetypeId) {
         case validArchetypesEnum.TheMundane:
-            playbook = <TheMundanePlaybook characterData={props.characterData} />;
+            playbook = <TheMundanePlaybookContainer />;
             break;
         default:
-            playbook = <TheMundanePlaybook characterData={props.characterData} />;
+            playbook = <TheMundanePlaybookContainer />;
     }
 
     return (

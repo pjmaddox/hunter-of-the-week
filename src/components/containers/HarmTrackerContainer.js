@@ -1,13 +1,16 @@
 //HarmTrackerContainer
 import { connect } from 'react-redux';
 import HarmTracker from '../HarmTracker.js'
-import { changeHarmForCharacter } from '../../actions/actions.js'
+import { changeHarmForCharacter } from "../../stores/actions/actions";
+import _ from "lodash";
 
 const maptStateToProps = (state, ownProps) => {
-    let char = _.find(state.activeCharacterList, { id: ownProps.characterId });
-    //TODO: just pass in max and current with ownProps ?? ie: genericize the 'tracker' concept
+    let char = _.find(state.activeCharacterList, (x) => {
+        return x.id === state.selectedCharacter;
+    });
+    
     return {
-        maxHarm: char.maximumHarm,
+        maxHarm: ownProps.maximumHarm? ownProps.maximumHarm : 7,
         currentHarm: char.currentHarm,
         characterId: ownProps.characterId
     };
