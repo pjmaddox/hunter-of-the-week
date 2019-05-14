@@ -8,13 +8,14 @@ const maptStateToProps = (state, ownProps) => {
     //TODO: just pass in max and current with ownProps ?? ie: genericize the 'tracker' concept
     return {
         maxHarm: char.maximumHarm,
-        currentHarm: char.currentHarm
+        currentHarm: char.currentHarm,
+        characterId: ownProps.characterId
     };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        handleHarmChange: (newHarm) => { dispatch(changeHarmForCharacter(ownProps.characterId, newHarm)); }
+        handleHarmChange: (characterId, newHarm) => { dispatch(changeHarmForCharacter(characterId, newHarm)); }
     };
 };
 
