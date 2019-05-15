@@ -13,8 +13,7 @@ export default class HarmTracker extends Component {
 
         return (
             <div className="harmTrackerContainer">
-                <label>Harm: </label>
-                <CellTrackerArray hasClearAllButton={true}  />
+                <CellTrackerArray hasClearAllButton={true} trackerLabelText={"Harm: "} currentValue={this.props.currentHarm} maxValue={this.props.maxHarm} hasPlusButton={true} has hasMinusButton={true} />
             </div>
         );
     }
