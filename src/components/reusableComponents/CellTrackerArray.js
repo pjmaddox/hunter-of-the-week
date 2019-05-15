@@ -15,7 +15,6 @@ const CellTrackerArray = (props) => {
             cellKey={"trackerCell-" + i}
             isFilled={(i<props.currentValue)? true : false}
             fillColorText={cellColor}
-            //TODO: this is a great point and i don't know how to get around it at this moment
             onCellClick={() => { props.handleValueChange(i+1); }}
         />;
         trackerCells.push(singleCell);
