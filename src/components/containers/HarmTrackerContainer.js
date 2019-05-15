@@ -12,13 +12,18 @@ const maptStateToProps = (state, ownProps) => {
     return {
         maxHarm: ownProps.maximumHarm? ownProps.maximumHarm : 7,
         currentHarm: char.currentHarm,
-        characterId: ownProps.characterId
+        characterId: state.selectedCharacter
     };
 };
 
+
+// const mapDispatchToProps = {
+//         handleHarmChange: (characterId, newHarm) => { changeHarmForCharacter(characterId, newHarm); }
+// };
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleHarmChange: (characterId, newHarm) => { dispatch(changeHarmForCharacter(characterId, newHarm)); }
+        handleHarmChange: (characterId, newHarm) => { console.log("characterId: " + characterId); console.log("newHarm: " + newHarm); dispatch(changeHarmForCharacter(characterId, newHarm)); }
     };
 };
 

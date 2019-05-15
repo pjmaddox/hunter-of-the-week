@@ -4,7 +4,10 @@ import TrackerCell from "./reusableComponents/TrackerCell.js"
 import CellTrackerArray from './reusableComponents/CellTrackerArray.js';
 
 export default class HarmTracker extends Component {
-    render() {
+    addCharacterIdToHarmChangeAndCall = (newValue) => {
+        this.props.handleHarmChange(this.props.characterId, newValue);
+    }
+    render = () => {
         let harmCells = [];
         for(var i = 0; i < this.props.maxHarm; ++i) {
             let singleCell = <input type="checkbox" checked={(i<this.props.currentHarm)? true : false} onClick={() => { this.props.handleHarmChange(this.props.characterId, i+1); }}/>;
@@ -13,7 +16,7 @@ export default class HarmTracker extends Component {
 
         return (
             <div className="harmTrackerContainer">
-                <CellTrackerArray hasClearAllButton={true} trackerLabelText={"Harm: "} currentValue={this.props.currentHarm} maxValue={this.props.maxHarm} hasPlusButton={true} has hasMinusButton={true} />
+                <CellTrackerArray handleValueChange={this.addCharacterIdToHarmChangeAndCall} hasClearAllButton={true} trackerLabelText={"Harm: "} currentValue={this.props.currentHarm} maxValue={this.props.maxHarm} hasPlusButton={true} has hasMinusButton={true} />
             </div>
         );
     }
