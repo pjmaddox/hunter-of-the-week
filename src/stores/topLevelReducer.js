@@ -20,13 +20,17 @@ const activeCharacterList = (previousState = [], action) => {
                 draft.push(newCharacter);
             });
         case CREATE_TEST_CHARACTER:
-            return _.concat(previousState, TEST_CHARACTER);
+            return produce(previousState, (draft) => {
+                draft.push(TEST_CHARACTER);
+            });
         case CHANGE_HARM_FOR_CHARACTER:
-            let thing = { ...previousState };
+            return produce(previousState, (draft) => {
+                draft[draft.findIndex(char => char.id === action.payload.characterId)].currentHarm = action.payload.newValue;
+            });
         case REMOVE_ITEM:
-            //TODO: do this 
-            previousState.find( _.without());
-            break;
+            return produce(previousState, (draft) => {
+                draft.splice(draft.findIndex(char => char.id === action.payload.characterId), 1);
+            });
         default:
             return previousState;
     }    
