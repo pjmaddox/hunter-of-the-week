@@ -5,6 +5,7 @@ import { CREATE_TEST_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_HARM_FOR_CHARACTER } from "../stores/actions/actions";
 import { REMOVE_ITEM } from "../stores/actions/actions.js";
+import { produce } from "immer";
 import _ from 'lodash';
 
 const activeCharacterList = (previousState = [], action) => {
@@ -15,7 +16,9 @@ const activeCharacterList = (previousState = [], action) => {
     switch(action.type){
         case ADD_NEW_CHARACTER:
             let newCharacter = getNewCharacter(action.payload.characterId, action.payload.archetypeId);
-            return _.concat(previousState, newCharacter);
+            return produce(previousState, (draft) => {
+                draft.push(newCharacter);
+            });
         case CREATE_TEST_CHARACTER:
             return _.concat(previousState, TEST_CHARACTER);
         case CHANGE_HARM_FOR_CHARACTER:
