@@ -9,7 +9,7 @@ const ExperienceTracker = (props) => {
             <CellTrackerArray 
                 currentValue={props.currentXp}
                 maxValue={5}
-                handleValueChange={props.handleXpChange}
+                handleValueChange={(newValue) => { props.handleXpChange(props.characterId, newValue); }}
                 trackerLabelText={"XP"}
                 hasClearAllButton={true}
                 cellColorText={"grey"}
@@ -23,6 +23,7 @@ const ExperienceTracker = (props) => {
 export default ExperienceTracker;
 
 ExperienceTracker.propTypes = {
+    characterId: PropTypes.string.isRequired,
     currentXp: PropTypes.number.isRequired,
     handleXpChange: PropTypes.func.isRequired
 };

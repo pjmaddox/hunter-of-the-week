@@ -8,13 +8,7 @@ export default class HarmTracker extends Component {
         this.props.handleHarmChange(this.props.characterId, newValue);
     }
     render = () => {
-        let harmCells = [];
-        for(var i = 0; i < this.props.maxHarm; ++i) {
-            let singleCell = <input type="checkbox" checked={(i<this.props.currentHarm)? true : false} onClick={() => { this.props.handleHarmChange(this.props.characterId, i+1); }}/>;
-            harmCells.push(singleCell);
-        }
-
-        return (
+         return (
             <div className="harmTrackerContainer">
                 <CellTrackerArray handleValueChange={this.addCharacterIdToHarmChangeAndCall} hasClearAllButton={true} trackerLabelText={"Harm: "} currentValue={this.props.currentHarm} maxValue={this.props.maxHarm} hasPlusButton={true} has hasMinusButton={true} />
             </div>

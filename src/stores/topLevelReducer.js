@@ -1,6 +1,6 @@
 //topLevel Reducer 
 import { combineReducers } from "redux";
-import { ADD_NEW_CHARACTER } from "../stores/actions/actions.js";
+import { ADD_NEW_CHARACTER, CHANGE_XP_FOR_CHARACTER } from "../stores/actions/actions.js";
 import { CREATE_TEST_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_SELECTED_CHARACTER } from "../stores/actions/actions.js";
 import { CHANGE_HARM_FOR_CHARACTER } from "../stores/actions/actions";
@@ -26,6 +26,11 @@ const activeCharacterList = (previousState = [], action) => {
         case CHANGE_HARM_FOR_CHARACTER:
             return produce(previousState, (draft) => {
                 draft[draft.findIndex(char => char.id === action.payload.characterId)].currentHarm = action.payload.newValue;
+            });
+        case CHANGE_XP_FOR_CHARACTER:
+            console.log(action.payload);
+            return produce(previousState, (draft) => {
+                draft[draft.findIndex(char => char.id === action.payload.characterId)].currentXp = action.payload.newValue;
             });
         case REMOVE_ITEM:
             return produce(previousState, (draft) => {

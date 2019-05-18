@@ -1,26 +1,21 @@
 //ExperienceTrackerContainer
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import CellTrackerArray from "../reusableComponents/CellTrackerArray.js";
 import ExperienceTracker from '../ExperienceTracker.js';
 import { changeXpForCharacter } from '../../stores/actions/actions.js';
 import _ from 'lodash';
 
-const mapStateToProps = (state, ownProps) => {
-    //TODO: Which is better?
-    let char = _.find(state.activeCharacterList, {id: ownProps.characterId});
-    //char.currentXp
-    //Or:
-    let currentXp = ownProps.currentXp
+const mapStateToProps = (state) => {
+    let char = _.find(state.activeCharacterList, {id: state.selectedCharacter});
     return {
-        currentXp: ownProps.currentXp
+        characterId: state.selectedCharacter,
+        currentXp: char.currentXp
     };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        handleXpChange: (newValue) => { dispatch(changeXpForCharacter(ownProps.characterId, newValue)); }
+        handleXpChange: (characterId, newValue) => { dispatch(changeXpForCharacter(characterId, newValue)); }
     };
 };
 
