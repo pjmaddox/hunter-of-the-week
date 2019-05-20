@@ -6,16 +6,15 @@ import LuckTracker from '../LuckTracker';
 
 const mapStateToProps = (state) => {
     let char = _.find(state.activeCharacterList, charX => charX.id === state.selectedCharacter);
-    console.log(char);
     return {
         characterId: state.selectedCharacter,
         currentLuck: char.currentLuck
     };
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        changeLuckForCharacter: (characterId, newValue) => { changeLuckForCharacter(characterId, newValue); }
+        changeLuckForCharacter: (characterId, newValue) => { dispatch(changeLuckForCharacter(characterId, newValue)); }
     }
 };
 
