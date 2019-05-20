@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HarmTrackerContainer from "./containers/HarmTrackerContainer";
 import ExperienceTrackerContainer from './containers/ExperienceTrackerContainer';
+import LuckTrackerContainer from './containers/LuckTrackerContainer';
 
 const TheMundanePlaybook = (props) => {
     if (props.characterData === undefined || props.characterData === null)
@@ -21,6 +22,9 @@ const TheMundanePlaybook = (props) => {
                     </div>
                     <div>
                         <ExperienceTrackerContainer />
+                    </div>
+                    <div>
+                        <LuckTrackerContainer />
                     </div>
                 </div>
             </div>

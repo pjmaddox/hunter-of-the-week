@@ -23,7 +23,7 @@ const maptStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleHarmChange: (characterId, newHarm) => { console.log("characterId: " + characterId); console.log("newHarm: " + newHarm); dispatch(changeHarmForCharacter(characterId, newHarm)); }
+        handleHarmChange: (characterId, newHarm) => { dispatch(changeHarmForCharacter(characterId, newHarm)); }
     };
 };
 
