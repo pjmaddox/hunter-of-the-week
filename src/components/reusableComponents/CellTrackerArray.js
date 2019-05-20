@@ -24,10 +24,10 @@ const CellTrackerArray = (props) => {
         <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(0);}} classes={"btn btn-default btn-secondary"} styleObject={{}} buttonText={"Clear All"} />
         : "";
     let minusButton = props.hasMinusButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue-1);}} classes={"cellTrackerMinusButton btn btn-default"} styleObject={{}} buttonText={"-"} />
+        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue-1);}} classes={"cellTrackerMinusButton btn btn-default"} styleObject={{}} buttonText={"-"} disabled={props.currentValue === 0}/>
         : "";
     let plusButton = props.hasPlusButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue+1);}} classes={"cellTrackerPlusButton btn btn-default"} styleObject={{}} buttonText={"+"} />
+        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue+1);}} classes={"cellTrackerPlusButton btn btn-default"} styleObject={{}} buttonText={"+"} disabled={props.currentValue === props.maxValue}/>
         : "";
     return (
         <div className="cellTrackerArrayContainer row">
