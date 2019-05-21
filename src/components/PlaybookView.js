@@ -9,6 +9,7 @@ import TheMundanePlaybook from './TheMundanePlaybook';
 
 //Data
 import { validArchetypesEnum } from "../data/archetypeList";
+import NameAndArchetypeTitleContainer from './containers/NameAndArchetypeTitleContainer';
 
 const PlaybookView = props => {
     if (props.characterData === null || props.characterData === undefined)
@@ -25,8 +26,12 @@ const PlaybookView = props => {
 
     return (
         <div className="playbookViewContainer">
-            PlaybookView
-            {playbook}
+            <div className="nameAndArchetype">
+                <NameAndArchetypeTitleContainer />
+            </div>
+            <div>
+                {playbook}
+            </div>
         </div>
     );
 };

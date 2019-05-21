@@ -18,6 +18,17 @@ export const addNewCharacter = (archetypeId) => {
     };
 };
 
+export const CHANGE_NAME_FOR_CHARACTER = "CHANGE_NAME_FOR_CHARACTER";
+export const changeNameForCharacter = (characterId, newName) => {
+    return {
+        type: CHANGE_NAME_FOR_CHARACTER,
+        payload: {
+            characterId: characterId,
+            newValue: newName
+        }
+    };
+};
+
 //TEST
 export const CREATE_TEST_CHARACTER = "CREATE_TEST_CHARACTER";
 export const createTestCharacter = () => {
