@@ -13,9 +13,6 @@ const TheMundanePlaybook = (props) => {
                 <div>
                     The Mundane Playbook
                 </div>
-                <div>
-                    {props.characterData.name}
-                </div>
                 <div className="statTrackers">
                     <div>
                         <HarmTrackerContainer />

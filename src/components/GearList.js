@@ -4,10 +4,11 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 export default class GearList extends Component {
-    render = () => {
+    render = (props) => {
         //TODO: Flesh out
         return (
             <div className="GearListContainer">
+
             </div>
         );
     }
