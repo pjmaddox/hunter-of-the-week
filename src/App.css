@@ -101,3 +101,8 @@
 .trackerCell input[type="checkbox"] {
   opacity: 0;
 }
+
+/* CollapsibleSection */
+.collapsibleSection-header {
+  border: grey solid 1px;
+}
