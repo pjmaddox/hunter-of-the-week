@@ -105,7 +105,12 @@ const TEST_CHARACTER = {
     currentLuck: 5,
     currentXp: 3,
     gearList: [
-
+        {
+            name: "Winter's Kiss",
+            harm: 0,
+            description: "Sleeps target in close physical range.",
+            tags: [{ title: "Magic", color: "purple", styles: "" }, { title: "Range: Intimate", color: "", styles: "" }, { title: "Sleep", color: "lightblue", styles: "" }]
+        }
     ],
     moves: [
         

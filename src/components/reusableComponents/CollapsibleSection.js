@@ -14,9 +14,7 @@ class CollapsibleSection extends React.Component {
             (<div className="col-sm-12 collapsibleSection-collapsed collapsibleSection-header">
                 <div>
                     <a href="#" className="btn btn-secondary btn-lg" onClick={this.toggleCollapseState}>
-                        <a href="#" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </a>
+                        <span className="glyphicon glyphicon-plus"></span>
                         {this.props.title}
                     </a>
                 </div>
@@ -26,9 +24,7 @@ class CollapsibleSection extends React.Component {
                 <div className="col-sm-12 collapsibleSection-expanded">
                     <div onClick={this.toggleCollapseState} className="collapsibleSection-header">
                         <a href="#" className="btn btn-secondary btn-lg" onClick={this.toggleCollapseState}>
-                            <a href="#" class="btn btn-info btn-md">
-                                <span class="glyphicon glyphicon-minus"></span>
-                            </a>
+                            <span className="glyphicon glyphicon-minus"></span>
                             {this.props.title}
                         </a>
                     </div>
@@ -47,7 +43,7 @@ class CollapsibleSection extends React.Component {
 
 CollapsibleSection.propTypes = {
     title: PropTypes.string.isRequired,
-    showTitleOnCollapse: PropTypes.bool.isRequired,
+    showTitleOnCollapse: PropTypes.bool,
     children: PropTypes.any
 };
 

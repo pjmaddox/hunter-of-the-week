@@ -1,17 +1,19 @@
 //ItemTag
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class ItemTag extends Component {
-    render() {
-        //TODO: Flesh out
-        return (
-            <div className="itemTagContainer">
-                itemTag
-            </div>
-        );
-    }
+
+const ItemTag = (props) => {
+    const styleObject = {
+        color: props.color
+    };
+    return (
+        <span style={styleObject}>{props.title}</span>
+    );
 };
 
 ItemTag.propTypes = {
-
+    title: PropTypes.string.isRequired,
+    color: PropTypes.string,
+    styles: PropTypes.string
 };
