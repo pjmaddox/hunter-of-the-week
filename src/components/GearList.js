@@ -4,22 +4,21 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import CollapsibleSection from './reusableComponents/CollapsibleSection';
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import Typography from '@material-ui/core/Typography';
 
 const GearList = (props) => {
-    console.log(props);
     return (
         <div className="GearListContainer">
-            <ExpansionPanel>
-                {props.currentGear}
+            <ExpansionPanel children={props.currentGear} >
+                <ExpansionPanelSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel3bh-content"
+                    id="panel3bh-header">
+                    <Typography>Gear List</Typography>
+                </ExpansionPanelSummary>
             </ExpansionPanel>
-            <CollapsibleSection title={"Gear List"}>
-                <Fab color="primary" aria-label="Add">
-                    <AddIcon />
-                </Fab>
-                {props.currentGear}
-            </CollapsibleSection>
         </div>
     );
 };

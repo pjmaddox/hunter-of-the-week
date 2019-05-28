@@ -10,12 +10,12 @@ const mapStateToProps = (state) => {
     if (!state.selectedCharacter)
         return { currentGear: null };
     const char = _.find(state.activeCharacterList, char => char.id === state.selecedCharacter);
-    //TODO: decide if we should just pass through the gear as elements, or let the component map them...
     let childItemElements = _.map(char.gearList, item => {
         return (
             <Item name={item.name} harm={item.harm} tags={item.tags} description={item.description}/>
         );
     });
+    console.log(childItemElements);
     return {
         currentGear: childItemElements
     };
