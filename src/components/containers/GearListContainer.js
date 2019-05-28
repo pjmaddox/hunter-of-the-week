@@ -17,6 +17,7 @@ const mapStateToProps = (state) => {
     });
     console.log(childItemElements);
     return {
+        characterId: state.selectedCharacter,
         currentGear: childItemElements
     };
 };
