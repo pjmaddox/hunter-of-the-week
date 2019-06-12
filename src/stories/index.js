@@ -19,12 +19,12 @@ storiesOf('Button', module)
 storiesOf('Tracker Bar', module)
   .add('Test', () => {
     const store = new Store({
-      active: false
+      clicked: 0
     });
     return (
       <div>
         <State store={store}>
-          <Button variant="contained" className={classes.button}>
+          <Button variant="contained" className={classes.button} onClick={() => {store.set({ clicked: store.get("clicked") + 1}); console.log(store.clicked);}}>
             Test
           </Button>
         </State>
