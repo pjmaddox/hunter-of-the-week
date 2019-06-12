@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TrackerCell from "./TrackerCell.js";
-import DoSomethingButton from './DoSomethingButton.js';
+import Button from '@material-ui/core/Button';
 
 const CellTrackerArray = (props) => {
     
@@ -19,16 +19,9 @@ const CellTrackerArray = (props) => {
         />;
         trackerCells.push(singleCell);
     }
-
-    let clearAllButton = props.hasClearAllButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(0);}} classes={"btn btn-default btn-secondary"} styleObject={{}} buttonText={"Clear All"} />
-        : "";
-    let minusButton = props.hasMinusButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue-1);}} classes={"cellTrackerMinusButton btn btn-default"} styleObject={{}} buttonText={"-"} disabled={props.currentValue === 0}/>
-        : "";
-    let plusButton = props.hasPlusButton? 
-        <DoSomethingButton onClickThingToDo={() => {props.handleValueChange(props.currentValue+1);}} classes={"cellTrackerPlusButton btn btn-default"} styleObject={{}} buttonText={"+"} disabled={props.currentValue === props.maxValue}/>
-        : "";
+    let clearAllButton = props.hasClearAllButton? <Button onClick={() => {props.handleValueChange(0);}}>{"Clear All"}</Button> : "";
+    let minusButton = props.hasMinusButton? <Button onClick={() => {props.handleValueChange(props.currentValue-1);}}>-</Button> : "";
+    let plusButton = props.hasPlusButton? <Button onClick={() => {props.handleValueChange(props.currentValue-1);}}>+</Button> : "";
     return (
         <div className="cellTrackerArrayContainer row">
             <div className="col-sm-6 col-md-1">
