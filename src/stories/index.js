@@ -25,12 +25,12 @@ storiesOf('Tracker Bar', module)
       <div>
         <State store={store}>
           <Button variant="contained" className={classes.button}>
-            Default
+            Test
           </Button>
         </State>
       </div>
     );
   });
 
-storiesOf('Item', module)
-  .add('Test', () => );
+// storiesOf('Item', module)
+//   .add('Test', () => );
