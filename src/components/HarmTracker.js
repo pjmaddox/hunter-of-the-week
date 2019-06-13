@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TrackerCell from "./reusableComponents/TrackerCell.js"
 import CellTrackerArray from './reusableComponents/CellTrackerArray.js';
 
 export default class HarmTracker extends Component {
